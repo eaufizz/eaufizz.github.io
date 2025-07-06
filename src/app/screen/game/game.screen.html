@@ -1,0 +1,41 @@
+<div class="game-container">
+  <div
+    class="team-info"
+    *ngFor="let team of teams"
+  >
+  <span
+    *ngIf="team === activeTeam"
+    class="arrow"
+  >></span>
+    <div>
+      <h3>チーム名</h3>
+      <span>{{team.name}}</span>
+    </div>
+    <div>
+      <h3>スコア</h3>
+      <span>{{team.score}}</span>
+    </div>
+    <div>
+      <h3>ミス</h3>
+      <span>{{team.miss}}</span>
+    </div>
+  </div>
+
+  <div class="score-buttons">
+    <button (click)="onClickScoreButton(0)">0</button>
+    <button (click)="onClickScoreButton(1)">1</button>
+    <button (click)="onClickScoreButton(2)">2</button>
+    <button (click)="onClickScoreButton(3)">3</button>
+    <button (click)="onClickScoreButton(4)">4</button>
+    <button (click)="onClickScoreButton(5)">5</button>
+    <button (click)="onClickScoreButton(6)">6</button><br>
+    <button (click)="onClickScoreButton(7)">7</button>
+    <button (click)="onClickScoreButton(8)">8</button>
+    <button (click)="onClickScoreButton(9)">9</button>
+    <button (click)="onClickScoreButton(10)">10</button>
+    <button (click)="onClickScoreButton(11)">11</button>
+    <button (click)="onClickScoreButton(12)">12</button>
+  </div>
+  <div style="white-space: pre-line;">{{teamString}}</div>
+</div>
+

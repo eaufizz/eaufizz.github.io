@@ -1,0 +1,33 @@
+<div class="page-container">
+  <app-header
+    title="チーム数を選択"
+    (back)="moveToHome()"
+    (home)="moveToHome()"
+  ></app-header>
+  <div class="buttons">
+    <button
+      class="team-btn"
+      (click)="setTeamCount(1)"
+    >
+      <span>1チーム</span>
+    </button>
+    <button
+      class="team-btn"
+      (click)="setTeamCount(2)"
+    >
+      <span>2チーム</span>
+    </button>
+    <button
+      class="team-btn"
+      (click)="setTeamCount(3)"
+    >
+      <span>3チーム</span>
+    </button>
+    <button
+      class="team-btn"
+      (click)="setTeamCount(4)"
+    >
+      <span>4チーム</span>
+    </button>
+  </div>
+</div>

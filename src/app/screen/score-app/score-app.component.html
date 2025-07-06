@@ -1,0 +1,25 @@
+<div class="home-container">
+  <img
+    src="assets/images/title.svg"
+    class="home-icon"
+  >
+
+  <div class="buttons">
+    <div
+      class="start button"
+      (click)="onClickStart()"
+      (mouseenter)="toggleStart()"
+      (mouseleave)="toggleStart()"
+    >
+    <img src="assets/images/start_game.svg" alt="">
+    </div>
+    <div
+      class="view button"
+      (click)="onClickSettings()"
+      (mouseenter)="toggleSettings()"
+      (mouseleave)="toggleSettings()"
+    >
+      <img src="assets/images/view_graph.svg" alt="">
+    </div>
+  </div>
+</div>

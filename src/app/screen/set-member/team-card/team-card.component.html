@@ -1,0 +1,30 @@
+<div class="card-container">
+  <div class="card-header">
+    <button
+      class="remove-btn"
+      (click)="removeMember()"
+      [disabled]="team.member.length <= 1"
+    ><span>-</span></button>
+    <span class="team-name">{{team.name}}</span>
+    <button
+      class="add-btn"
+      (click)="addMember()"
+      [disabled]="team.member.length >= 4"
+    ><span>+</span></button>
+  </div>
+
+  <div class="members">
+    <ng-container *ngFor="let member of team.member; let i = index; trackBy: trackById">
+      <div class="member">
+        <span>{{i+1}}.</span>
+        <div class="select-box"></div>
+        <app-member-select-box
+          [initialID]="member.id"
+          [options]="members"
+          [selectedID]="selectedID"
+          (memberSelected)="changeMember(i, $event)"
+        ></app-member-select-box>
+      </div>
+    </ng-container>
+  </div>
+</div>

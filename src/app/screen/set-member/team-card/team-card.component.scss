@@ -1,0 +1,82 @@
+@use "../../../stylesheets/normal-color.scss" as normal;
+
+.card-container {
+  width: 327px;
+  height: 125px;
+  background-color: normal.$white;
+  padding: 6px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  gap: 15px;
+  align-items: center;
+
+  .card-header {
+    width: 154px;
+    height: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 29px;
+      height: 29px;
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid black;
+      border-radius: 8px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:disabled {
+        cursor: default;
+        opacity: 0.3;
+      }
+
+      &:focus {
+        outline: none !important;
+      }
+
+      &:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    }
+
+    .remove-btn {
+      background-color: #94FF22;
+    }
+
+    .add-btn {
+      background-color: #FFA646;;
+    }
+
+    .team-name {
+      width: 96px;
+      height: 26px;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+
+  .members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    .member {
+      display: flex;
+      gap: 2px;
+    }
+  }
+}

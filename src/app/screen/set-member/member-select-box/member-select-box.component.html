@@ -1,0 +1,17 @@
+<div class="select-box">
+  <mat-form-field>
+    <mat-select
+      [(ngModel)]="selectedOption"
+      (selectionChange)="onSelected($event.value)"
+    >
+      @for (option of options; track option) {
+        <mat-option
+          [ngClass]="{ 'selected': isSelected(option.id) }"
+          [value]="option"
+        >
+          {{ option.name }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>

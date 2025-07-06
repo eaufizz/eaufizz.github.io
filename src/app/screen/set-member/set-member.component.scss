@@ -1,0 +1,165 @@
+@use "../../stylesheets/normal-color.scss" as normal;
+
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  padding: 70px 24px 80px 24px;
+  background-color: normal.$bgColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.show-register {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  img {
+    width: 100%;
+  }
+  .test {
+    font-size: 30px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .buttons {
+    margin-top: 24px;
+    width: 327px;
+    display: flex;
+    gap: 13px;
+
+    button {
+      width: 157px;
+      height: 46px;
+      border: 2px solid normal.$buttonBorderColor;
+      border-radius: 8px;
+      background-color: normal.$buttonBgColor;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      span {
+        color: normal.$textColor;
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.register-page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 375px;
+  height: 100%;
+  min-height: 580px;
+  max-height: 900px;
+
+  .forms {
+    width: 327px;
+    height: 92px;
+    padding: 12px 31px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: normal.$white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 80px;
+
+    label {
+      width: 265px;
+      height: 22px;
+      font-weight: 700;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  button {
+    width: 157px;
+    height: 46px;
+    border: 2px solid normal.$buttonBorderColor;
+    border-radius: 8px;
+    background-color: normal.$buttonBgColor;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    span {
+      color: normal.$textColor;
+      font-size: 22px;
+    }
+  }
+
+  .player-lists {
+    width: 327px;
+    height: 57%;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+      width: 100%;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .player-list {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: normal.$white;
+      border-radius: 8px;
+      padding: 12px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .list-item {
+        width: 100%;
+        height: 44px;
+        border-bottom: 1px solid black;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        scrollbar-width: 0px;
+
+        span {
+          font-size: 22px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
