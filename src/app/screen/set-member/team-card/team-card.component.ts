@@ -12,7 +12,11 @@ export class TeamCardComponent {
   @Output() modifyTeam = new EventEmitter();
   @Input() team: Team = {
     name: "",
-    member: []
+    member: [],
+    score: 0,
+    totalScore: 0,
+    miss: 0,
+    currentPlayer: {name: "", id: ""},
   };
   @Input() members: Player[] = [];
   @Input() selectedID: string[] = [];

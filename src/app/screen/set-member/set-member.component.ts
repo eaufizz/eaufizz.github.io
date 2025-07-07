@@ -38,10 +38,10 @@ export class SetMemberComponent {
         const team: Team = {
           name: `チーム${i + 1}`,
           member: [],
-          number: i,
           score: 0,
           totalScore: 0,
           miss: 0,
+          currentPlayer: {name: "", id: ""},
         };
         this.currentTeams.push(team);
     }

@@ -7,10 +7,10 @@ const PLAYERS = "players";
 export interface Team {
   name: string;
   member: Player[];
-  number?: number;
-  score?: number;
-  totalScore?: number;
-  miss?: number;
+  score: number;
+  totalScore: number;
+  miss: number;
+  currentPlayer: Player,
 }
 
 export interface Player {
