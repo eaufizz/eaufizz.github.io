@@ -1,0 +1,54 @@
+<div class="page-container">
+  <app-header
+    title="リザルト"
+    (back)="moveToBack()"
+    (home)="moveToHome()"
+  ></app-header>
+
+  <div class="info">
+    <span>第{{setCount}}セット終了</span>
+  </div>
+  <div class="score-board">
+    <div class="score-header">
+      <div class="space"></div>
+      <div class="column">
+        <span>セット</span>
+      </div>
+      <div class="column">
+        <span>合計</span>
+      </div>
+    </div>
+    <div
+      class="contents"
+      *ngFor="let team of teams"
+    >
+      <div class="team-data">
+        <div class="team-name">{{team.name}}</div>
+      </div>
+      <div class="score">{{team.score}}</div>
+      <div class="total score">{{team.totalScore}}</div>
+    </div>
+    <div class="footer"></div>
+  </div>
+  <div class="buttons">
+    <button
+      class="continue"
+      (click)="onClickContinue()"
+    >
+      <span>ゲームを続ける</span>
+    </button>
+    <button
+      class="save"
+      (click)="onClickSave()"
+    >
+      <span>スコアを保存して終了</span>
+    </button>
+    <button
+      class="no-save"
+      (click)="onClickNoSave()"
+    >
+      <span>スコアを保存せず終了</span>
+    </button>
+  </div>
+
+</div>

@@ -16,7 +16,6 @@ import { throwIfEmpty } from 'rxjs';
 })
 export class GameComponent {
   teams: Team[] = [];
-  teamString: string = "";
   activeTeam: Team = {
     name: "",
     member: [],
@@ -26,24 +25,24 @@ export class GameComponent {
     currentPlayer: {name: "", id: ""},
   };
   teamCount: number = 0;
-  setCount: number = 1;
+  setCount: number = 0;
   selectedButton: number = 13;
 
   constructor(
-    private appService: ScoreAppService,
+    private scoreAppService: ScoreAppService,
     private router: Router,
   ) {}
 
   ngOnInit(): void {
-    this.teams = this.appService.getSelectedTeams();
+    this.teams = this.scoreAppService.getSelectedTeams();
     if (this.teams.length === 0) {
-      this.moveToBack();
+      this.moveToSelectTeam();
     }
+    this.setCount = this.scoreAppService.getSetCount() + 1;
+    this.scoreAppService.setSetCount(this.setCount);
     for (const team of this.teams) {
       team.currentPlayer = team.member[0];
     }
-    console.log(this.teams)
-    this.teamString = JSON.stringify(this.teams, null, 2);
     for (const team of this.teams) {
       team.score = 0;
       team.miss = 0;
@@ -63,7 +62,7 @@ export class GameComponent {
         this.activeTeam.score = 25;
       }
       if (this.activeTeam.score === 50 && typeof this.activeTeam.totalScore === "number") {
-        this.activeTeam.totalScore += 50;
+        this.finishSet();
       }
       if (this.selectedButton === 0 && typeof this.activeTeam.miss === "number") {
         this.activeTeam.miss += 1;
@@ -94,11 +93,22 @@ export class GameComponent {
     }
   }
 
+  finishSet(): void {
+    for (const team of this.teams) {
+      team.totalScore += team.score;
+    }
+    this.router.navigate(["result"]);
+  }
+
   moveToBack(): void {
     this.router.navigate(["set-member"]);
   }
 
   moveToHome(): void {
     this.router.navigate([""]);
+  }
+
+  moveToSelectTeam(): void {
+    this.router.navigate(["select-team"])
   }
 }

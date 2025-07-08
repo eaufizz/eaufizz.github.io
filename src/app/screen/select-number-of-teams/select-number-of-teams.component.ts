@@ -15,6 +15,12 @@ export class SelectNumberOfTeamsComponent {
     private scoreAppService: ScoreAppService,
   ) {}
 
+  ngOnInit(): void {
+    this.scoreAppService.setSelectedTeams([]);
+    this.scoreAppService.setTeamCount(0);
+    this.scoreAppService.setSetCount(0);
+  }
+
   moveToHome(): void {
     this.router.navigate(['']);
   }

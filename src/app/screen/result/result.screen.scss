@@ -1,0 +1,131 @@
+@use "../../stylesheets/normal-color.scss" as normal;
+
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  padding: 94px 24px 80px 24px;
+  background-color: normal.$bgColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .info {
+    font-size: 28px;
+  }
+
+  .score-board {
+    width: 100%;
+    height: 298px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    .score-header {
+      height: 30px;
+      display: flex;
+      background-color: #C68854;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+
+      .space {
+        flex: 1;
+      }
+
+      .column {
+        width: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          height: 22px;
+          font-size: 16px;
+          color: white;
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+
+    .contents {
+      display: flex;
+      height: 64px;
+      min-width: 0;
+      border-top: 1px solid #F1F1F1;
+      border-bottom: 1px solid #F1F1F1;
+
+      .team-data {
+        flex: 1;
+        background-color: white;
+        display: flex;
+        min-width: 0;
+        align-items: center;
+
+        .team-name {
+          flex: 1;
+          margin-left: 8px;
+          font-size: 28px;
+        }
+      }
+
+      .score {
+        width: 64px;
+        background-color: #8CBF3E;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .total {
+        background-color: black;
+      }
+    }
+
+    .footer {
+      height: 12px;
+      background-color: #C68854;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  .buttons {
+    width: 241px;
+    height: 167px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    button {
+      width: 241px;
+      height: 45px;
+      padding: 0;
+      border-radius: 8px;
+      font-size: 22px;
+      color: black;
+
+      &.continue {
+        background-color: #6E3C0B;
+        border: 2px solid #7F5124;
+        color: white;
+        font-weight: 700;
+      }
+
+      &.save {
+        background-color: #EDC987;
+        border: 1px solid #7F5124;
+      }
+
+      &.no-save {
+        background-color: white;
+        border: 1px solid black;
+      }
+    }
+  }
+}

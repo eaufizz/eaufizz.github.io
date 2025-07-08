@@ -24,6 +24,7 @@ export interface Player {
 })
 export class ScoreAppService {
   private teamCount: number = 0;
+  private setCount: number = 0;
   private selectedTeams = new BehaviorSubject<Team[]>([]);
   private registeredPlayer = new BehaviorSubject<Player[]>([]);
 
@@ -59,6 +60,14 @@ export class ScoreAppService {
 
   getTeamCount(): number {
     return this.teamCount;
+  }
+
+  setSetCount(value: number) {
+    this.setCount = value;
+  }
+
+  getSetCount(): number {
+    return this.setCount;
   }
 
   updateRegisteredPlayer(players: Player[]): void {

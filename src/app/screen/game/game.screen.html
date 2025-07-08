@@ -11,11 +11,11 @@
         (click)="onClickScoreButton(7)"
       >7</button>
       <button
-        [ngClass]="{'enabled': selectedButton === 8}"
+        [ngClass]="{'enabled': selectedButton === 9}"
         (click)="onClickScoreButton(9)"
       >9</button>
       <button
-        [ngClass]="{'enabled': selectedButton === 9}"
+        [ngClass]="{'enabled': selectedButton === 8}"
         (click)="onClickScoreButton(8)"
       >8</button>
     </div>
@@ -75,6 +75,7 @@
     <button
       class="submit"
       (click)="onClickSubmit()"
+      [disabled]="selectedButton === 13"
     >
       決定
     </button>
@@ -119,7 +120,7 @@
         </div>
       </div>
       <div class="score">{{team.score}}</div>
-      <div class="total score">{{team.totalScore}}</div>
+      <div class="total score">{{team.totalScore + team.score}}</div>
     </div>
     <div class="footer"></div>
   </div>

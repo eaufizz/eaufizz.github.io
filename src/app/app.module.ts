@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SelectBoxComponent } from './components/select-box/select-box.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MemberSelectBoxComponent } from './screen/set-member/member-select-box/member-select-box.component';
+import { ResultComponent } from './screen/result/result.screen';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MemberSelectBoxComponent } from './screen/set-member/member-select-box/
     TeamCardComponent,
     SelectBoxComponent,
     MemberSelectBoxComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

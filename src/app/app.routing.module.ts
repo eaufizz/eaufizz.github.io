@@ -7,6 +7,7 @@ import { ScoreAppComponent } from './screen/score-app/score-app.component';
 import { SetMemberComponent } from './screen/set-member/set-member.component';
 import { GameComponent } from './screen/game/game.screen';
 import { SelectNumberOfTeamsComponent } from './screen/select-number-of-teams/select-number-of-teams.component';
+import { ResultComponent } from './screen/result/result.screen';
 
 const routes: Routes = [
   { path: '', component: ScoreAppComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'select-team', component: SelectNumberOfTeamsComponent },
   { path: 'set-member', component: SetMemberComponent },
   { path: 'game', component: GameComponent },
+  { path: 'result', component: ResultComponent },
 ];
 
 @NgModule({
