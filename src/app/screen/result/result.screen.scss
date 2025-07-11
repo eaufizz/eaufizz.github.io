@@ -112,19 +112,19 @@
 
       &.continue {
         background-color: #6E3C0B;
-        border: 2px solid #7F5124;
+        border: 3px solid #7F5124;
         color: white;
         font-weight: 700;
       }
 
       &.save {
         background-color: #EDC987;
-        border: 1px solid #7F5124;
+        border: 3px solid #7F5124;
       }
 
       &.no-save {
         background-color: white;
-        border: 1px solid black;
+        border: 2px solid black;
       }
     }
   }

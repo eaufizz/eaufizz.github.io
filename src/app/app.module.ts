@@ -19,6 +19,9 @@ import { SelectBoxComponent } from './components/select-box/select-box.component
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MemberSelectBoxComponent } from './screen/set-member/member-select-box/member-select-box.component';
 import { ResultComponent } from './screen/result/result.screen';
+import { ExitDialogComponent } from './components/exit-dialog/exit-dialog.component';
+import { CheckNameDialogComponent } from './components/check-name-dialog/check-name-dialog.component';
+import { StartGameDialogComponent } from './components/start-game-dialog/start-game-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { ResultComponent } from './screen/result/result.screen';
     SelectBoxComponent,
     MemberSelectBoxComponent,
     ResultComponent,
+    ExitDialogComponent,
+    CheckNameDialogComponent,
+    StartGameDialogComponent,
   ],
   imports: [
     BrowserModule,

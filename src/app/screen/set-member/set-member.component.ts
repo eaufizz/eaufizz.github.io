@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewContainerRef } from '@angular/core';
 import {
   ScoreAppService,
   Team,
@@ -6,6 +6,7 @@ import {
 } from '../../core/service/ScoreAppService';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { InputFormComponent } from '../../components/input-form/input-form.component';
 
 @Component({
   selector: 'app-set-member',
@@ -19,8 +20,8 @@ export class SetMemberComponent {
   showRegisterPage: boolean = false;
   registeredPlayer: Player[] = [];
   selectedID: string[] = [];
+  showStartDialog: boolean = false;
   private subscription = new Subscription();
-
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -78,8 +79,15 @@ export class SetMemberComponent {
     console.log(this.currentTeams);
   }
 
+  toggleShowStartDialog(): void {
+    this.showStartDialog = !this.showStartDialog;
+  }
+
+  @ViewChild('inputRef') inputRef!: InputFormComponent;
+
   playerName: string = "";
   isDuplicate: boolean = false;
+  showCheckDialog: boolean = false;
 
   toggleShowRegisterPage(): void {
     this.showRegisterPage = !this.showRegisterPage;
@@ -90,11 +98,19 @@ export class SetMemberComponent {
     this.isDuplicate = this.scoreAppService.isDuplicatePlayer(this.playerName);
   }
 
-  onClickAdd(): void {
+  toggleShowDialog(): void {
+    this.showCheckDialog = !this.showCheckDialog;
+  }
+
+  onClickAgree(): void {
     this.scoreAppService.registerNewPlayer(this.playerName);
+    this.showCheckDialog = false;
+    this.inputRef.onInputChange("");
   }
 
   startGame(): void {
+    this.scoreAppService.setSnapShot([]);
+    this.scoreAppService.setSetCount(1);
     this.router.navigate(["game"]);
   }
 }

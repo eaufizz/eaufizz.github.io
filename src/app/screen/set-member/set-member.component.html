@@ -21,7 +21,7 @@
     <button (click)="toggleShowRegisterPage()">
       <span>選手登録</span>
     </button>
-    <button (click)="startGame()">
+    <button (click)="toggleShowStartDialog()">
       <span>プレイ！</span>
     </button>
   </div>
@@ -38,11 +38,15 @@
   <div class="forms">
     <label for="">名前を入力してください</label>
     <app-input-form
+      #inputRef
       (valueChange)="onInputPlayerName($event)"
-      
     ></app-input-form>
+    <span *ngIf="isDuplicate">※すでに登録済みです</span>
   </div>
-  <button (click)="onClickAdd()">
+  <button
+    (click)="toggleShowDialog()"
+    [disabled]="(isDuplicate || playerName === '') && playerName !== 'delete user'"
+  >
     <span>追加</span>
   </button>
   <div class="player-lists">
@@ -57,3 +61,14 @@
     </div>
   </div>
 </div>
+<app-check-name-dialog
+  *ngIf="showCheckDialog"
+  [playerName]="playerName"
+  (close)="toggleShowDialog()"
+  (agree)="onClickAgree()"
+></app-check-name-dialog>
+<app-start-game-dialog
+  *ngIf="showStartDialog"
+  (close)="toggleShowStartDialog()"
+  (start)="startGame()"
+></app-start-game-dialog>

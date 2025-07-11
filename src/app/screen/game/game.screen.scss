@@ -146,6 +146,16 @@
           background-color: rgb(238, 144, 144);
         }
 
+        &.dropout-team {
+          .team-name {
+            opacity: 0.3;
+          }
+
+          .member-name {
+            opacity: 0.3;
+          }
+        }
+
         .data-header {
           display: flex;
           height: 16px;

@@ -69,7 +69,11 @@
     </div>
   </div>
   <div class="buttons">
-    <button class="back">
+    <button
+      class="back"
+      (click)="onClickBack()"
+      [disabled]="snapShot.length === 0"
+    >
       戻る
     </button>
     <button
@@ -96,7 +100,10 @@
     >
       <div
         class="team-data"
-        [ngClass]="{'current-team': team.name == activeTeam.name}"
+        [ngClass]="{
+          'current-team': team.name === activeTeam.name,
+          'dropout-team': team.miss === 3
+        }"
       >
         <div class="data-header">
           <div class="team-name">{{team.name}}</div>
@@ -125,3 +132,8 @@
     <div class="footer"></div>
   </div>
 </div>
+<app-exit-dialog
+  *ngIf="showDialog"
+  [navigate]="navigateRoot"
+  (close)="closeDialog()"
+></app-exit-dialog>

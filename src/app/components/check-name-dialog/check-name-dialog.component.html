@@ -1,0 +1,41 @@
+<div
+  *ngIf="playerName !== 'delete user'"
+  class="dialog-container"
+  (click)="onClickClose()">
+  <div class="dialog">
+    <div class="message">
+      <span>
+        「{{playerName}}」<br>
+        でお間違いないですか？
+      </span>
+    </div>
+    <div class="buttons">
+      <button (click)="onClickClose()">
+        <span>いいえ</span>
+      </button>
+      <button (click)="onClickAgree()">
+        <span>はい</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div
+  *ngIf="playerName === 'delete user'"
+  class="dialog-container delete"
+  (click)="onClickClose()">
+  <div class="dialog">
+    <div class="message">
+      <span>
+        消してもいいの？
+      </span>
+    </div>
+    <div class="buttons">
+      <button (click)="onClickDelete()">
+        <span>はい</span>
+      </button>
+      <button (click)="onClickDelete()">
+        <span>はい</span>
+      </button>
+    </div>
+  </div>
+</div>

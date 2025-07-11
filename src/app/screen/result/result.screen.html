@@ -50,5 +50,9 @@
       <span>スコアを保存せず終了</span>
     </button>
   </div>
-
 </div>
+<app-exit-dialog
+  *ngIf="showDialog"
+  [navigate]="navigateRoot"
+  (close)="closeDialog()"
+></app-exit-dialog>

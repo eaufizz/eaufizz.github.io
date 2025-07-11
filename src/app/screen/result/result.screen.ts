@@ -16,6 +16,8 @@ import {
 export class ResultComponent {
   teams: Team[] = [];
   setCount: number = 1;
+  showDialog: boolean = false;
+  navigateRoot: string = "";
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -25,16 +27,23 @@ export class ResultComponent {
   ngOnInit(): void {
     this.teams = this.scoreAppService.getSelectedTeams();
     if (this.teams.length === 0) {
-      // this.moveToSelectTeam();
+      this.moveToSelectTeam();
     }
     this.setCount = this.scoreAppService.getSetCount();
     if (this.setCount === 0) {
-      // this.moveToSelectTeam();
+      this.moveToSelectTeam();
     }
   }
 
   onClickContinue(): void {
-    this.moveToBack();
+    this.scoreAppService.setSnapShot([]);
+    this.scoreAppService.setSetCount(this.setCount + 1);
+    if (this.teams.length === 2) {
+      [this.teams[0], this.teams[1]] = [this.teams[1], this.teams[0]];
+    } else if (this.teams.length >= 3) {
+      this.teams.sort((a, b) => a.score - b.score);
+    }
+    this.router.navigate(["game"]);
   }
 
   onClickSave(): void {
@@ -50,10 +59,15 @@ export class ResultComponent {
   }
 
   moveToHome(): void {
-    this.router.navigate([""]);
+    this.showDialog = true;
+    this.navigateRoot = "";
   }
 
   moveToSelectTeam(): void {
     this.router.navigate(["select-team"])
+  }
+
+  closeDialog(): void {
+    this.showDialog = false;
   }
 }

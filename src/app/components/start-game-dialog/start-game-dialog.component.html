@@ -1,0 +1,21 @@
+<div
+  class="dialog-container"
+  (click)="onClickClose()">
+  <div class="dialog">
+    <div class="message">
+      <span>
+        メンバー・順番に<br>
+        間違いはないですか？<br>
+        よければ、いざ開戦！
+      </span>
+    </div>
+    <div class="buttons">
+      <button (click)="onClickClose()">
+        <span>戻る</span>
+      </button>
+      <button (click)="onClickStart()">
+        <span>プレイ！</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -19,12 +19,18 @@ export interface Player {
   order?: number;
 }
 
+export interface SnapShot {
+  teams: Team[];
+  activeTeam: Team;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class ScoreAppService {
   private teamCount: number = 0;
   private setCount: number = 0;
+  private snapShot: SnapShot[] = [];
   private selectedTeams = new BehaviorSubject<Team[]>([]);
   private registeredPlayer = new BehaviorSubject<Player[]>([]);
 
@@ -39,7 +45,6 @@ export class ScoreAppService {
     const players: Player[] = stored ? JSON.parse(stored) : [];
     players.unshift(guest);
     this.registeredPlayer.next(players);
-    console.log(this.registeredPlayer.value);
   }
 
   setSelectedTeams(teams: Team[]): void {
@@ -70,9 +75,20 @@ export class ScoreAppService {
     return this.setCount;
   }
 
+  setSnapShot(snapShot: SnapShot[]): void {
+    this.snapShot = snapShot;
+  }
+
+  getSnapShot(): SnapShot[] {
+    return this.snapShot;
+  }
+
   updateRegisteredPlayer(players: Player[]): void {
     this.registeredPlayer.next(players);
-    localStorage.setItem(PLAYERS, JSON.stringify(players));
+    const noGuest = players.filter((player) =>
+      player.id !== "guest"
+    )
+    localStorage.setItem(PLAYERS, JSON.stringify(noGuest));
   }
 
   addRegisteredPlayer(player: Player): void {

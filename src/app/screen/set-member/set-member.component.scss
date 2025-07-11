@@ -41,7 +41,7 @@
     button {
       width: 157px;
       height: 46px;
-      border: 2px solid normal.$buttonBorderColor;
+      border: 3px solid normal.$buttonBorderColor;
       border-radius: 8px;
       background-color: normal.$buttonBgColor;
       padding: 0;
@@ -75,13 +75,12 @@
 
   .forms {
     width: 327px;
-    height: 92px;
-    padding: 12px 31px;
+    height: 108px;
+    padding: 12px 31px 0px 31px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     background-color: normal.$white;
-    justify-content: center;
     align-items: center;
     border-radius: 8px;
     box-sizing: border-box;
@@ -96,12 +95,17 @@
       justify-content: center;
       align-items: center;
     }
+
+    span {
+      line-height: 16%;
+      color: #FF0000;
+    }
   }
 
   button {
     width: 157px;
     height: 46px;
-    border: 2px solid normal.$buttonBorderColor;
+    border: 3px solid normal.$buttonBorderColor;
     border-radius: 8px;
     background-color: normal.$buttonBgColor;
     padding: 0;
@@ -112,6 +116,10 @@
 
     &:hover {
       cursor: pointer;
+    }
+
+    &:disabled {
+      opacity: 0.3;
     }
 
     span {

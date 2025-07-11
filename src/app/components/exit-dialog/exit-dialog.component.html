@@ -1,0 +1,20 @@
+<div
+  class="dialog-container"
+  (click)="onClickClose()">
+  <div class="dialog">
+    <div class="message">
+      <span>
+        スコアは保存されません!!<br>
+        本当によろしいですか？
+      </span>
+    </div>
+    <div class="buttons">
+      <button (click)="onClickClose()">
+        <span>いいえ</span>
+      </button>
+      <button (click)="onClickMove()">
+        <span>はい</span>
+      </button>
+    </div>
+  </div>
+</div>
