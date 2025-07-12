@@ -1,9 +1,5 @@
-import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
-import {
-  Player,
-  ScoreAppService,
-  Team,
-} from '../../../core/service/ScoreAppService';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Player } from '../../../core/service/ScoreAppService';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -20,8 +16,6 @@ export class MemberSelectBoxComponent {
 
   selectedOption?: Player;
   private subscription = new Subscription();
-
-  constructor(private scoreAppService: ScoreAppService) {}
 
   ngOnInit(): void {
     if (this.options?.length && this.initialID) {

@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Player, Team, ScoreAppService } from '../../../core/service/ScoreAppService';
-import { Subscription, throwIfEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-team-card',
@@ -10,16 +9,11 @@ import { Subscription, throwIfEmpty } from 'rxjs';
 })
 export class TeamCardComponent {
   @Output() modifyTeam = new EventEmitter();
-  @Input() team: Team = {
-    name: "",
-    member: [],
-    score: 0,
-    totalScore: 0,
-    miss: 0,
-    currentPlayer: {name: "", id: ""},
-  };
+  @Input() team!: Team;
   @Input() members: Player[] = [];
   @Input() selectedID: string[] = [];
+
+  option: Player[] = [];
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -33,6 +27,7 @@ export class TeamCardComponent {
 
   removeMember(): void {
     this.team.member.pop();
+    this.modifyTeam.emit(this.team);
   }
 
   addMember(): void {
@@ -44,12 +39,19 @@ export class TeamCardComponent {
     const matched = this.scoreAppService.getPlayerFromID(id);
 
     if (matched) {
-      this.team.member[index] = matched;
+      this.team.member[index] = structuredClone(matched);
     }
     this.modifyTeam.emit(this.team);
   }
-  trackById(index: number, member: Player): string {
-  return member.id;
-}
 
+  trackById(index: number, member: Player): string {
+    return member.id;
+  }
+
+  isUsed(id: string, selfId: string): boolean {
+  if (id === 'guest') return false; // ゲストは何度でも選べる
+
+  // 自分以外で使用されていれば除外
+  return this.selectedID.includes(id) && id !== selfId;
+}
 }

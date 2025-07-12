@@ -21,6 +21,7 @@ export class SetMemberComponent {
   registeredPlayer: Player[] = [];
   selectedID: string[] = [];
   showStartDialog: boolean = false;
+  renderFlag: boolean = true;
   private subscription = new Subscription();
 
   constructor(
@@ -74,9 +75,12 @@ export class SetMemberComponent {
   }
 
   onChangeMember(index: number, team: Team): void {
-    this.currentTeams[index] = team;
+    this.currentTeams[index] = {
+      ...team,
+      member: [...team.member]
+    };
+    this.currentTeams = [...this.currentTeams];
     this.scoreAppService.setSelectedTeams(this.currentTeams);
-    console.log(this.currentTeams);
   }
 
   toggleShowStartDialog(): void {

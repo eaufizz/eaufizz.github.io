@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import {
   ScoreAppService,
   Team,
-  Player,
 } from '../../core/service/ScoreAppService';
 
 @Component({

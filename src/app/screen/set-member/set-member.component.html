@@ -8,13 +8,15 @@
     (home)="moveToHome()"
   ></app-header>
   <div class="cards">
-    <ng-container *ngFor="let team of currentTeams; let i = index">
-      <app-team-card
-        [team]="team"
-        [members]="registeredPlayer"
-        (modifyTeam)="onChangeMember(i, $event)"
-        [selectedID]="selectedID"
-      ></app-team-card>
+    <ng-container *ngIf="renderFlag">
+      <ng-container *ngFor="let team of currentTeams; let i = index">
+        <app-team-card
+          [team]="team"
+          [members]="registeredPlayer"
+          (modifyTeam)="onChangeMember(i, $event)"
+          [selectedID]="selectedID"
+        ></app-team-card>
+      </ng-container>
     </ng-container>
   </div>
   <div class="buttons">
