@@ -91,6 +91,7 @@ export class SetMemberComponent {
 
   playerName: string = "";
   isDuplicate: boolean = false;
+  isOver: boolean = false;
   showCheckDialog: boolean = false;
 
   toggleShowRegisterPage(): void {
@@ -100,6 +101,19 @@ export class SetMemberComponent {
   onInputPlayerName(value: string): void {
     this.playerName = value;
     this.isDuplicate = this.scoreAppService.isDuplicatePlayer(this.playerName);
+    if (this.getCustomLength(value) > 10) {
+      this.isOver = true;
+    } else {
+      this.isOver = false;
+    }
+  }
+
+  getCustomLength(value: string): number {
+    let length = 0;
+    for (const char of value) {
+      length += char.match(/[ -~]/) ? 0.5 : 1;
+    }
+    return length;
   }
 
   toggleShowDialog(): void {

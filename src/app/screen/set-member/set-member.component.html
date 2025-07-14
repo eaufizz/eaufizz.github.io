@@ -44,22 +44,28 @@
       (valueChange)="onInputPlayerName($event)"
     ></app-input-form>
     <span *ngIf="isDuplicate">※すでに登録済みです</span>
+    <span *ngIf="isOver">※文字数オーバーです</span>
   </div>
   <button
     (click)="toggleShowDialog()"
-    [disabled]="(isDuplicate || playerName === '') && playerName !== 'delete user'"
+    [disabled]="
+      (isDuplicate || playerName === '' || isOver) &&
+      playerName !== 'delete user'
+    "
   >
     <span>追加</span>
   </button>
   <div class="player-lists">
     <label for="">◇プレイヤーリスト</label>
     <div class="player-list">
-      <div
-        *ngFor="let player of registeredPlayer"
-        class="list-item"
-      >
-        <span>{{player.name}}</span>
-      </div>
+      <ng-container *ngFor="let player of registeredPlayer">
+        <div
+          class="list-item"
+          *ngIf="player.id !== 'guest'"
+        >
+          <span>{{player.name}}</span>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

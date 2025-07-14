@@ -75,25 +75,29 @@
 
   .forms {
     width: 327px;
-    height: 108px;
-    padding: 12px 31px 0px 31px;
+    height: 14vh;
+    padding: 1.5vh 3.8vh 0 3.8vh;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.5vh;
     background-color: normal.$white;
     align-items: center;
     border-radius: 8px;
     box-sizing: border-box;
-    margin-top: 80px;
+    margin-top: 5vh;
 
     label {
       width: 265px;
-      height: 22px;
+      height: 3vh;
       font-weight: 700;
-      font-size: 22px;
+      font-size: clamp(16px, 3vh, 24px);
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    app-input-form {
+      height: 4.2vh;
     }
 
     span {

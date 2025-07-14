@@ -48,7 +48,7 @@
     }
 
     .title {
-      font-size: 28px;
+      font-size: clamp(24px, 3.7vh, 30px);
       color: normal.$titleColor;
       width: 100%;
       height: 40px;

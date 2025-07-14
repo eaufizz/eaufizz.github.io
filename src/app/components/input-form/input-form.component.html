@@ -8,7 +8,12 @@
       [(ngModel)]="value"
       (ngModelChange)="onInputChange($event)">
     @if (value) {
-      <button matSuffix matIconButton aria-label="Clear" (click)="value=''">
+      <button
+        matSuffix
+        matIconButton
+        aria-label="Clear"
+        (click)="value=''; onInputChange('')"
+      >
         <span>×</span>
       </button>
     }
