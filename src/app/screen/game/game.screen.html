@@ -78,10 +78,17 @@
     </button>
     <button
       class="submit"
-      (click)="onClickSubmit()"
+      (click)="onClickSubmit(false)"
       [disabled]="selectedButton === 13"
     >
       決定
+    </button>
+    <button
+      class="submit"
+      (click)="onClickSubmit(true)"
+      [disabled]="selectedButton === 13"
+    >
+      狙い通り
     </button>
   </div>
   <div class="score-board">

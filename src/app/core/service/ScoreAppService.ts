@@ -13,15 +13,28 @@ export interface Team {
   currentPlayer: Player,
 }
 
-export interface Player {
+export interface User {
   name: string;
   id: string;
-  order?: number;
+}
+
+export interface Player extends User {
+  set: SetData[];
+}
+
+export interface SetData {
+  throws: number[];
+  break: number;
+  critical: number;
+  over: number;
+  dropout: boolean;
+  win: boolean;
 }
 
 export interface SnapShot {
   teams: Team[];
   activeTeam: Team;
+  isBreak: boolean;
 }
 
 @Injectable({
@@ -39,11 +52,20 @@ export class ScoreAppService {
 
   constructor() {
     const stored = localStorage.getItem(PLAYERS);
-    const guest: Player = {
+    const guest: User = {
       name: "ゲスト", id: "guest"
     };
-    const players: Player[] = stored ? JSON.parse(stored) : [];
-    players.unshift(guest);
+    const users: User[] = stored ? JSON.parse(stored) : [];
+    users.unshift(guest);
+    const players: Player[] = [];
+    for (const user of users) {
+      const player: Player = {
+        name: user.name,
+        id: user.id,
+        set: [],
+      }
+      players.push(player)
+    }
     this.registeredPlayer.next(players);
   }
 
@@ -112,6 +134,7 @@ export class ScoreAppService {
     const newPlayer: Player = {
       name: playerName,
       id: uuidv4(),
+      set: [],
     }
     this.addRegisteredPlayer(newPlayer);
   }

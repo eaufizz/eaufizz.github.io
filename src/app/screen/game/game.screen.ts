@@ -21,13 +21,14 @@ export class GameComponent {
     score: 0,
     totalScore: 0,
     miss: 0,
-    currentPlayer: {name: "", id: ""},
+    currentPlayer: {name: "", id: "", set: []},
   };
   setCount: number = 0;
   selectedButton: number = 13;
   snapShot: SnapShot[] = [];
   showDialog: boolean = false;
   navigateRoot: string = "";
+  isBreak: boolean = true;
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -47,11 +48,23 @@ export class GameComponent {
     }
     this.setCount = this.scoreAppService.getSetCount();
     for (const team of this.teams) {
-      team.currentPlayer = team.member[0];
-    }
-    for (const team of this.teams) {
       team.score = 0;
       team.miss = 0;
+      team.currentPlayer = team.member[0];
+      for (const member of team.member) {
+        if (this.setCount === 1) {
+          member.set = [];
+        }
+        const set = {
+          throws: [],
+          break: -1,
+          critical: 0,
+          over: 0,
+          dropout: false,
+          win: false,
+        }
+        member.set.push(set);
+      }
     }
     this.activeTeam = this.teams[0];
   }
@@ -60,12 +73,20 @@ export class GameComponent {
     this.selectedButton = score;
   }
 
-  onClickSubmit(): void {
+  onClickSubmit(isCritical: boolean): void {
     this.saveSnapShot();
     if (typeof this.activeTeam?.score === "number") {
       this.activeTeam.score += this.selectedButton;
+      this.activeTeam.currentPlayer.set[this.setCount - 1].throws.push(this.selectedButton);
+      if (this.isBreak) {
+        this.activeTeam.currentPlayer.set[this.setCount - 1].break = this.selectedButton;
+      }
+      if (isCritical) {
+        this.activeTeam.currentPlayer.set[this.setCount - 1].critical ++;
+      }
       if (this.activeTeam.score > 50) {
         this.activeTeam.score = 25;
+        this.activeTeam.currentPlayer.set[this.setCount - 1].over ++;
       }
       if (this.activeTeam.score === 50 && typeof this.activeTeam.totalScore === "number") {
         this.finishSet();
@@ -85,12 +106,15 @@ export class GameComponent {
     }
     this.changeActiveTeam();
     this.selectedButton = 13;
+    this.isBreak = false;
+    this.debug();
   }
 
   saveSnapShot(): void {
     const snap: SnapShot = {
       teams: structuredClone(this.teams),
       activeTeam: structuredClone(this.activeTeam),
+      isBreak: this.isBreak,
     }
     this.snapShot.push(snap);
   }
@@ -140,6 +164,9 @@ export class GameComponent {
   }
 
   finishSet(): void {
+    for (const member of this.activeTeam.member) {
+      member.set[this.setCount - 1].win = true;
+    }
     for (const team of this.teams) {
       team.totalScore += team.score;
     }
@@ -156,6 +183,7 @@ export class GameComponent {
       if (matched) {
         this.activeTeam = matched;
       }
+      this.isBreak = latest.isBreak;
     }
     this.selectedButton = 13;
   }
@@ -176,5 +204,23 @@ export class GameComponent {
 
   moveToSelectTeam(): void {
     this.router.navigate(["select-team"])
+  }
+
+  debug(): void {
+    const index = this.setCount - 1
+    for (const team of this.teams) {
+      for (const member of team.member) {
+        console.log("______________________________________");
+        console.log("プレイヤー名: " + member.name);
+        console.log("ID: " + member.id);
+        console.log("獲得点数↓");
+        console.log(member.set[index].throws);
+        console.log("ブレイク: " + member.set[index].break);
+        console.log("狙い通り数: " + member.set[index].critical);
+        console.log("オーバー数: " + member.set[index].over);
+        console.log("失格?: " + member.set[index].dropout);
+        console.log("勝ち?: " + member.set[index].win);
+      }
+    }
   }
 }
