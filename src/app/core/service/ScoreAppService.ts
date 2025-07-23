@@ -110,7 +110,11 @@ export class ScoreAppService {
     const noGuest = players.filter((player) =>
       player.id !== "guest"
     )
-    localStorage.setItem(PLAYERS, JSON.stringify(noGuest));
+    const users = [];
+    for (const player of noGuest) {
+      users.push({ name: player.name, id: player.id});
+    }
+    localStorage.setItem(PLAYERS, JSON.stringify(users));
   }
 
   addRegisteredPlayer(player: Player): void {

@@ -1,0 +1,45 @@
+<div class="page-container">
+  <app-header
+    title="プレイヤーを選択"
+    (back)="moveToHome()"
+    (home)="moveToHome()"
+  ></app-header>
+  <div class="player-lists">
+    <label for="">◇プレイヤーリスト</label>
+    <div class="player-list">
+      @for (player of registeredPlayer; track player;) {
+        <div
+          class="list-item"
+          *ngIf="player.id !== 'guest'"
+        >
+          <div class="player-name">
+            <span>{{player.name}}</span>
+          </div>
+          <button [matMenuTriggerFor]="menu">
+            ︙
+          </button>
+          <mat-menu #menu="matMenu">
+            <button
+              mat-menu-item
+              (click)="changePlayerName(player)"
+            >
+              プレイヤー名変更
+            </button>
+            <button
+              mat-menu-item
+              (click)="deletePlayer(player)"
+            >
+              プレイヤーの削除
+            </button>
+          </mat-menu>
+        </div>
+        <app-delete-player-dialog
+          *ngIf="showDeletePlayerDialog"
+          [registeredPlayer]="registeredPlayer"
+          [targetPlayer]="deleteTarget"
+          (close)="closeDeletePlayerDialog()"
+        ></app-delete-player-dialog>
+      }
+    </div>
+  </div>
+</div>

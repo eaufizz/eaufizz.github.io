@@ -22,6 +22,11 @@ import { ResultComponent } from './screen/result/result.screen';
 import { ExitDialogComponent } from './components/exit-dialog/exit-dialog.component';
 import { CheckNameDialogComponent } from './components/check-name-dialog/check-name-dialog.component';
 import { StartGameDialogComponent } from './components/start-game-dialog/start-game-dialog.component';
+import { SelectPlayerComponent } from './screen/select-player/select-player.component';
+import { ViewDataComponent } from './screen/view-data/view-data.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { ChangeNameDialogComponent } from './components/change-name-dialog/change-name-dialog.component';
+import { DeletePlayerDialogComponent } from './components/delete-player-dialog/delete-player-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,10 @@ import { StartGameDialogComponent } from './components/start-game-dialog/start-g
     ExitDialogComponent,
     CheckNameDialogComponent,
     StartGameDialogComponent,
+    SelectPlayerComponent,
+    ViewDataComponent,
+    ChangeNameDialogComponent,
+    DeletePlayerDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +59,7 @@ import { StartGameDialogComponent } from './components/start-game-dialog/start-g
     MatSelectModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

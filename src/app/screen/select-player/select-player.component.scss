@@ -1,0 +1,69 @@
+@use "../../stylesheets/normal-color.scss" as normal;
+
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  padding: 70px 24px 80px 24px;
+  background-color: normal.$bgColor;
+
+  .player-lists {
+    width: 100%;
+    height: 70%;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+      width: 100%;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .player-list {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: normal.$white;
+      border-radius: 8px;
+      padding: 12px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .list-item {
+        width: 100%;
+        height: 44px;
+        border-bottom: 1px solid black;
+        scrollbar-width: 0px;
+        display: flex;
+
+        .player-name {
+          font-size: 22px;
+          font-weight: 700;
+          flex: 1;
+        }
+
+        button {
+          background-color: rgba(0,0,0,0);
+          border: none;
+          font-size: 20px;
+          width: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  background-color: white !important;
+}

@@ -1,0 +1,22 @@
+<div
+  class="dialog-container"
+  (click)="onClickClose()">
+  <div class="dialog">
+    <div class="message">
+      <span>
+        「{{targetPlayer?.name}}」<br>
+        のデータを削除します。<br>
+        復元はできません!!<br>
+        本当によろしいですか？
+      </span>
+    </div>
+    <div class="buttons">
+      <button (click)="onClickClose()">
+        <span>戻る</span>
+      </button>
+      <button (click)="onClickDelete()">
+        <span>削除</span>
+      </button>
+    </div>
+  </div>
+</div>

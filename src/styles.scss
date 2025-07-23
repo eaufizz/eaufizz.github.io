@@ -18,6 +18,7 @@ app-root {
 
 * {
   font-family: "Noto Sans JP";
+  touch-action: manipulation;
 }
 
 :host ::ng-deep button:focus,

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +8,6 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class ScoreAppComponent {
-  isStartHovered: boolean = false;
-  isSettingsHovered: boolean = false;
-
   constructor(
     private router: Router,
   ) {}
@@ -20,15 +16,7 @@ export class ScoreAppComponent {
     this.router.navigate(['/select-team']);
   }
 
-  onClickSettings(): void {
-
-  }
-
-  toggleStart(): void {
-    this.isStartHovered = !this.isStartHovered;
-  }
-
-  toggleSettings(): void {
-    this.isSettingsHovered = !this.isSettingsHovered;
+  onClickViewData(): void {
+    this.router.navigate(["view-data"]);
   }
 }
