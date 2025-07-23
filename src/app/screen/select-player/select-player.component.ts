@@ -14,6 +14,7 @@ export class SelectPlayerComponent {
   registeredPlayer: Player[] = [];
   showMenu: boolean = false;
   deleteTarget: Player | null = null;
+  changeTarget: Player | null = null;
   showDeletePlayerDialog: boolean = false;
   showChangeNameDialog: boolean = false;
 
@@ -41,7 +42,8 @@ export class SelectPlayerComponent {
   }
 
   changePlayerName(user: Player): void {
-
+    this.changeTarget = user;
+    this.showChangeNameDialog = true;
   }
 
   deletePlayer(user: Player): void {
@@ -51,5 +53,9 @@ export class SelectPlayerComponent {
 
   closeDeletePlayerDialog(): void {
     this.showDeletePlayerDialog = false;
+  }
+
+  closeChangePlayerNameDialog(): void {
+    this.showChangeNameDialog = false;
   }
 }

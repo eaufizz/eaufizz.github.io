@@ -39,6 +39,12 @@
           [targetPlayer]="deleteTarget"
           (close)="closeDeletePlayerDialog()"
         ></app-delete-player-dialog>
+        <app-change-name-dialog
+          *ngIf="showChangeNameDialog"
+          [registeredPlayer]="registeredPlayer"
+          [targetPlayer]="changeTarget"
+          (close)="closeChangePlayerNameDialog()"
+        ></app-change-name-dialog>
       }
     </div>
   </div>
