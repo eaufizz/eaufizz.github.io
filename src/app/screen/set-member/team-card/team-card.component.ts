@@ -31,7 +31,7 @@ export class TeamCardComponent {
   }
 
   addMember(): void {
-    this.team.member.push({name: "ゲスト", id: "guest", set: []});
+    this.team.member.push({name: "ゲスト", id: "guest", sets: []});
     this.modifyTeam.emit(this.team);
   }
 

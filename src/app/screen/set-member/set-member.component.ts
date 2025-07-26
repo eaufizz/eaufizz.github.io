@@ -43,7 +43,7 @@ export class SetMemberComponent {
           score: 0,
           totalScore: 0,
           miss: 0,
-          currentPlayer: {name: "", id: "", set: []},
+          currentPlayer: {name: "", id: "", sets: []},
         };
         this.currentTeams.push(team);
     }

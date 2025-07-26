@@ -45,11 +45,13 @@ export class ResultComponent {
   }
 
   onClickSave(): void {
-
+    this.scoreAppService.saveCurrentTeamData();
+    this.router.navigate([""]);
   }
 
   onClickNoSave(): void {
-
+    this.navigateRoot = "select-team";
+    this.showDialog = true;
   }
 
   moveToBack(): void {
@@ -57,8 +59,8 @@ export class ResultComponent {
   }
 
   moveToHome(): void {
-    this.showDialog = true;
     this.navigateRoot = "";
+    this.showDialog = true;
   }
 
   moveToSelectTeam(): void {

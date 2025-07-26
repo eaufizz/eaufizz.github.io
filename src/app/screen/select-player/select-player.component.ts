@@ -37,6 +37,10 @@ export class SelectPlayerComponent {
     this.router.navigate(['']);
   }
 
+  onClickPlayer(id: string): void {
+    this.router.navigate(["/view-data", id]);
+  }
+
   toggleShowMenu(): void {
     this.showMenu = !this.showMenu;
   }

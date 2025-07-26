@@ -1,33 +1,57 @@
 <div class="page-container">
   <app-header
-    title="チーム数を選択"
-    (back)="moveToHome()"
+    [title]="target.name"
+    (back)="moveToBack()"
     (home)="moveToHome()"
   ></app-header>
-  <div class="buttons">
-    <button
-      class="team-btn"
-      (click)="setTeamCount(1)"
-    >
-      <span>1チーム</span>
-    </button>
-    <button
-      class="team-btn"
-      (click)="setTeamCount(2)"
-    >
-      <span>2チーム</span>
-    </button>
-    <button
-      class="team-btn"
-      (click)="setTeamCount(3)"
-    >
-      <span>3チーム</span>
-    </button>
-    <button
-      class="team-btn"
-      (click)="setTeamCount(4)"
-    >
-      <span>4チーム</span>
-    </button>
+  <div class="cards">
+    <div class="card">
+      <label>セット勝率</label>
+      <div class="data">
+        <span>58</span>%
+      </div>
+    </div>
+    <div class="card">
+      <label>勝利ターン<br>平均</label>
+      <div class="data">
+        <span>58</span>ターン
+      </div>
+    </div>
+    <div class="card">
+      <label>ブレイク平均</label>
+      <div class="data">
+        <span>2</span>点
+      </div>
+    </div>
+    <div class="card">
+      <label>狙い通り率</label>
+      <div class="data">
+        <span>58</span>%
+      </div>
+    </div>
+    <div class="card">
+      <label>平均得点</label>
+      <div class="data">
+        <span>58</span>点
+      </div>
+    </div>
+    <div class="card">
+      <label>ファウル率</label>
+      <div class="data">
+        <span>58</span>%
+      </div>
+    </div>
+    <div class="card">
+      <label><span>1試合当たりの</span><br>50オーバー率</label>
+      <div class="data">
+        <span>58</span>%
+      </div>
+    </div>
+    <div class="card">
+      <label><span>1試合当たりの</span><br>失格率</label>
+      <div class="data">
+        <span>58</span>%
+      </div>
+    </div>
   </div>
 </div>

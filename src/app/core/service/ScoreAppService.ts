@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 
 const PLAYERS = "players";
+const DATA = "data";
 
 export interface Team {
   name: string;
@@ -18,17 +19,33 @@ export interface User {
   id: string;
 }
 
+export interface PlayDataList {
+  data: PlayData[];
+}
+
+export interface PlayData {
+  id: string;
+  matches: Match[];
+}
+
+export interface Match {
+  date: Date;
+  sets: SetData[];
+}
+
 export interface Player extends User {
-  set: SetData[];
+  sets: SetData[];
 }
 
 export interface SetData {
   throws: number[];
+  score: number;
   break: number;
   critical: number;
   over: number;
   dropout: boolean;
   win: boolean;
+  turn: number;
 }
 
 export interface SnapShot {
@@ -62,7 +79,7 @@ export class ScoreAppService {
       const player: Player = {
         name: user.name,
         id: user.id,
-        set: [],
+        sets: [],
       }
       players.push(player)
     }
@@ -138,7 +155,7 @@ export class ScoreAppService {
     const newPlayer: Player = {
       name: playerName,
       id: uuidv4(),
-      set: [],
+      sets: [],
     }
     this.addRegisteredPlayer(newPlayer);
   }
@@ -153,5 +170,34 @@ export class ScoreAppService {
     return this.registeredPlayer.value.find((player) =>
       player.id === id
     );
+  }
+
+  saveCurrentTeamData(): void {
+    const stored = localStorage.getItem(DATA);
+    let dataList: PlayDataList = { data: [] }
+    if (stored !== null) {
+      dataList = JSON.parse(stored);
+    }
+    const now = new Date();
+    const jstString = new Date(now.getTime() + 9 * 60 * 60 * 1000);    const selectedTeams = this.getSelectedTeams();
+    for (const team of selectedTeams) {
+      for (const member of team.member) {
+        const match: Match = {
+          date: jstString,
+          sets: member.sets,
+        };
+        const targetPlayer = dataList.data.find((data) => data.id === member.id);
+        if (targetPlayer) {
+          targetPlayer.matches.push(match);
+        } else {
+          const playData: PlayData = {
+            id: member.id,
+            matches: [match],
+          }
+          dataList.data.push(playData);
+        }
+      }
+    }
+    localStorage.setItem(DATA, JSON.stringify(dataList));
   }
 }

@@ -12,7 +12,10 @@
           class="list-item"
           *ngIf="player.id !== 'guest'"
         >
-          <div class="player-name">
+          <div
+            class="player-name"
+            (click)="onClickPlayer(player.id)"
+          >
             <span>{{player.name}}</span>
           </div>
           <button [matMenuTriggerFor]="menu">

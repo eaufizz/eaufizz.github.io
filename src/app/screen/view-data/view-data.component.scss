@@ -10,33 +10,43 @@
   padding: 70px 24px 80px 24px;
   background-color: normal.$bgColor;
 
-  .buttons {
-    width: 200px;
+  .cards {
+    width: 100%;
+    margin-top: 8px;
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin: 169px auto 0px auto;
+    flex-wrap: wrap;
+    gap: 2%;
 
-    .team-btn {
-      width: 200px;
-      height: 46px;
-      border: 3px solid normal.$buttonBorderColor;
+    .card {
+      width: 32%;
+      height: 107px;
+      margin-top: 8px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       border-radius: 8px;
-      background-color: normal.$buttonBgColor;
+      font-size: 16px;
 
-      &:hover {
-        cursor: pointer;
+      label {
+        color: #6E3C0B;
+        font-weight: 700;
+        text-align: center;
+
+        span {
+          font-size: 12px;
+        }
       }
 
-      span {
-        color: normal.$textColor;
-        font-size: 26px;
+      .data {
+        font-size: 16px;
+
+        span {
+          font-size: 22px;
+          font-weight: 700;
+        }
       }
     }
-  }
-
-  img {
-    height: 200px;
-    width: 150px;
   }
 }

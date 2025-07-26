@@ -21,7 +21,7 @@ export class GameComponent {
     score: 0,
     totalScore: 0,
     miss: 0,
-    currentPlayer: {name: "", id: "", set: []},
+    currentPlayer: {name: "", id: "", sets: []},
   };
   setCount: number = 0;
   selectedButton: number = 13;
@@ -53,17 +53,19 @@ export class GameComponent {
       team.currentPlayer = team.member[0];
       for (const member of team.member) {
         if (this.setCount === 1) {
-          member.set = [];
+          member.sets = [];
         }
         const set = {
           throws: [],
+          score: 0,
           break: -1,
           critical: 0,
           over: 0,
           dropout: false,
           win: false,
+          turn: 0,
         }
-        member.set.push(set);
+        member.sets.push(set);
       }
     }
     this.activeTeam = this.teams[0];
@@ -77,16 +79,20 @@ export class GameComponent {
     this.saveSnapShot();
     if (typeof this.activeTeam?.score === "number") {
       this.activeTeam.score += this.selectedButton;
-      this.activeTeam.currentPlayer.set[this.setCount - 1].throws.push(this.selectedButton);
+      for (const member of this.activeTeam.member) {
+        member.sets[this.setCount - 1].turn ++;
+        member.sets[this.setCount - 1].score += this.selectedButton;
+      }
+      this.activeTeam.currentPlayer.sets[this.setCount - 1].throws.push(this.selectedButton);
       if (this.isBreak) {
-        this.activeTeam.currentPlayer.set[this.setCount - 1].break = this.selectedButton;
+        this.activeTeam.currentPlayer.sets[this.setCount - 1].break = this.selectedButton;
       }
       if (isCritical) {
-        this.activeTeam.currentPlayer.set[this.setCount - 1].critical ++;
+        this.activeTeam.currentPlayer.sets[this.setCount - 1].critical ++;
       }
       if (this.activeTeam.score > 50) {
         this.activeTeam.score = 25;
-        this.activeTeam.currentPlayer.set[this.setCount - 1].over ++;
+        this.activeTeam.currentPlayer.sets[this.setCount - 1].over ++;
       }
       if (this.activeTeam.score === 50 && typeof this.activeTeam.totalScore === "number") {
         this.finishSet();
@@ -165,7 +171,7 @@ export class GameComponent {
 
   finishSet(): void {
     for (const member of this.activeTeam.member) {
-      member.set[this.setCount - 1].win = true;
+      member.sets[this.setCount - 1].win = true;
     }
     for (const team of this.teams) {
       team.totalScore += team.score;
@@ -213,13 +219,15 @@ export class GameComponent {
         console.log("______________________________________");
         console.log("プレイヤー名: " + member.name);
         console.log("ID: " + member.id);
+        console.log("経過ターン: " + member.sets[index].turn);
+        console.log("スコア: " + member.sets[index].score)
         console.log("獲得点数↓");
-        console.log(member.set[index].throws);
-        console.log("ブレイク: " + member.set[index].break);
-        console.log("狙い通り数: " + member.set[index].critical);
-        console.log("オーバー数: " + member.set[index].over);
-        console.log("失格?: " + member.set[index].dropout);
-        console.log("勝ち?: " + member.set[index].win);
+        console.log(member.sets[index].throws);
+        console.log("ブレイク: " + member.sets[index].break);
+        console.log("狙い通り数: " + member.sets[index].critical);
+        console.log("オーバー数: " + member.sets[index].over);
+        console.log("失格?: " + member.sets[index].dropout);
+        console.log("勝ち?: " + member.sets[index].win);
       }
     }
   }
