@@ -172,18 +172,20 @@ export class ScoreAppService {
     );
   }
 
-  saveCurrentTeamData(): void {
+  saveCurrentTeamData(monthOffset: number = 0): void {
     const stored = localStorage.getItem(DATA);
     let dataList: PlayDataList = { data: [] }
     if (stored !== null) {
       dataList = JSON.parse(stored);
     }
     const now = new Date();
-    const jstString = new Date(now.getTime() + 9 * 60 * 60 * 1000);    const selectedTeams = this.getSelectedTeams();
+    const jstDate = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+    jstDate.setMonth(jstDate.getMonth() + monthOffset);
+    const selectedTeams = this.getSelectedTeams();
     for (const team of selectedTeams) {
       for (const member of team.member) {
         const match: Match = {
-          date: jstString,
+          date: jstDate,
           sets: member.sets,
         };
         const targetPlayer = dataList.data.find((data) => data.id === member.id);
@@ -199,5 +201,16 @@ export class ScoreAppService {
       }
     }
     localStorage.setItem(DATA, JSON.stringify(dataList));
+  }
+
+  getDataFromID(id: string): PlayData | undefined {
+    const stored = localStorage.getItem(DATA);
+    if (stored === null) {
+      return undefined;
+    }
+    const dataList: PlayDataList = JSON.parse(stored);
+    return dataList.data.find((playData) =>
+      playData.id === id
+    );
   }
 }

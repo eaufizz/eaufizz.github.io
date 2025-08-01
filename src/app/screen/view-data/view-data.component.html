@@ -1,57 +1,126 @@
 <div class="page-container">
   <app-header
-    [title]="target.name"
+    [title]="targetName"
     (back)="moveToBack()"
     (home)="moveToHome()"
   ></app-header>
   <div class="cards">
-    <div class="card">
+    <div
+      class="card"
+      (click)="onClickCard('セット勝率')"
+      [ngClass]="{'selected': chartFilter.includes('セット勝率')}"
+    >
       <label>セット勝率</label>
       <div class="data">
-        <span>58</span>%
+        <span>{{setWinRate}}</span>
+        <span class="unit">
+          %
+        </span>
       </div>
     </div>
-    <div class="card">
+    <div
+      class="card"
+      (click)="onClickCard('勝利ターン平均')"
+      [ngClass]="{'selected': chartFilter.includes('勝利ターン平均')}"
+    >
       <label>勝利ターン<br>平均</label>
       <div class="data">
-        <span>58</span>ターン
+        <span>{{averageWinningTurns}}</span>
+        <span class="unit">
+          ターン
+        </span>
       </div>
     </div>
-    <div class="card">
+    <div
+      class="card"
+      (click)="onClickCard('ブレイク平均')"
+      [ngClass]="{'selected': chartFilter.includes('ブレイク平均')}"
+    >
       <label>ブレイク平均</label>
       <div class="data">
-        <span>2</span>点
+        <span>{{averageBreaks}}</span>
+        <span class="unit">
+          点
+        </span>
       </div>
     </div>
-    <div class="card">
+    <div
+      class="card"
+      (click)="onClickCard('狙い通り率')"
+      [ngClass]="{'selected': chartFilter.includes('狙い通り率')}"
+    >
       <label>狙い通り率</label>
       <div class="data">
-        <span>58</span>%
+        <span>{{averageCriticalRate}}</span>
+        <span class="unit">
+          %
+        </span>
       </div>
     </div>
-    <div class="card">
+    <div
+      class="card"
+      (click)="onClickCard('平均得点')"
+      [ngClass]="{'selected': chartFilter.includes('平均得点')}"
+    >
       <label>平均得点</label>
       <div class="data">
-        <span>58</span>点
+        <span>{{averageScore}}</span>
+        <span class="unit">
+          点
+        </span>
       </div>
     </div>
-    <div class="card">
+    <div
+      class="card"
+      (click)="onClickCard('ファウル率')"
+      [ngClass]="{'selected': chartFilter.includes('ファウル率')}"
+    >
       <label>ファウル率</label>
       <div class="data">
-        <span>58</span>%
+        <span>{{foulRate}}</span>
+        <span class="unit">
+          %
+        </span>
       </div>
     </div>
-    <div class="card">
-      <label><span>1試合当たりの</span><br>50オーバー率</label>
+    <div
+      class="card"
+      (click)="onClickCard('50オーバー')"
+      [ngClass]="{'selected': chartFilter.includes('50オーバー')}"
+    >
+      <label>50オーバー</label>
       <div class="data">
-        <span>58</span>%
+        <span>{{overFiftyRate}}</span>
+        <span class="unit">
+          回/セット
+        </span>
       </div>
     </div>
-    <div class="card">
-      <label><span>1試合当たりの</span><br>失格率</label>
+    <div
+      class="card"
+      (click)="onClickCard('セット失格率')"
+      [ngClass]="{'selected': chartFilter.includes('セット失格率')}"
+    >
+      <label>セット失格率</label>
       <div class="data">
-        <span>58</span>%
+        <span>{{dropoutRate}}</span>
+        <span class="unit">
+          %
+        </span>
       </div>
     </div>
+  </div>
+  <div chart-container>
+    <ngx-charts-line-chart
+      [results]="filteredChart"
+      [scheme]="'vivid'"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="false"
+      [autoScale]="true"
+      [timeline]="true"
+      [animations]="true"
+    >
+    </ngx-charts-line-chart>
   </div>
 </div>

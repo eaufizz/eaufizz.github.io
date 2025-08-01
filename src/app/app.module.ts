@@ -27,6 +27,7 @@ import { ViewDataComponent } from './screen/view-data/view-data.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { ChangeNameDialogComponent } from './components/change-name-dialog/change-name-dialog.component';
 import { DeletePlayerDialogComponent } from './components/delete-player-dialog/delete-player-dialog.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { DeletePlayerDialogComponent } from './components/delete-player-dialog/d
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatMenuModule,
+    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

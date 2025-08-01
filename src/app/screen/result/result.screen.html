@@ -11,10 +11,15 @@
   <div class="score-board">
     <div class="score-header">
       <div class="space"></div>
-      <div class="column">
+      <div
+        class="column"
+        (click)="moveMonth(-1)">
         <span>セット</span>
       </div>
-      <div class="column">
+      <div
+        class="column"
+        (click)="moveMonth(1)"
+      >
         <span>合計</span>
       </div>
     </div>

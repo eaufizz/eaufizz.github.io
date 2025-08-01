@@ -16,6 +16,7 @@ export class ResultComponent {
   setCount: number = 1;
   showDialog: boolean = false;
   navigateRoot: string = "";
+  monthOffset: number = 0;
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -45,7 +46,7 @@ export class ResultComponent {
   }
 
   onClickSave(): void {
-    this.scoreAppService.saveCurrentTeamData();
+    this.scoreAppService.saveCurrentTeamData(this.monthOffset);
     this.router.navigate([""]);
   }
 
@@ -69,5 +70,9 @@ export class ResultComponent {
 
   closeDialog(): void {
     this.showDialog = false;
+  }
+
+  moveMonth(number: number): void {
+    this.monthOffset += number;
   }
 }
