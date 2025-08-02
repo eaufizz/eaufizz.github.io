@@ -32,6 +32,11 @@ export class SetMemberComponent {
 
   ngOnInit(): void {
     this.currentTeams = this.scoreAppService.getSelectedTeams().slice();
+    this.currentTeams.sort((a, b) => {
+      const numA = parseInt(a.name.replace(/\D/g, ''), 10);
+      const numB = parseInt(b.name.replace(/\D/g, ''), 10);
+      return numA - numB;
+    });
     this.teamCount = this. scoreAppService.getTeamCount();
     if (this.teamCount === 0) {
       this.moveToBack();

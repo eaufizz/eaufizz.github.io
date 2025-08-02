@@ -40,9 +40,25 @@ export class ResultComponent {
     if (this.teams.length === 2) {
       [this.teams[0], this.teams[1]] = [this.teams[1], this.teams[0]];
     } else if (this.teams.length >= 3) {
-      this.teams.sort((a, b) => a.score - b.score);
+      this.sortTeam();
     }
     this.router.navigate(["game"]);
+  }
+
+  sortTeam(): void {
+    this.teams.sort((a, b) => a.score - b.score);
+    let previous: number = -1;
+    const splitted: Team[][] = [];
+    for (const team of this.teams) {
+      if (team.score !== previous) {
+        previous = team.score;
+        splitted.push([team]);
+      } else {
+        splitted[splitted.length - 1].unshift(team);
+      }
+    }
+    this.teams = splitted.flatMap((sorted) => sorted);
+    this.scoreAppService.setSelectedTeams(this.teams);
   }
 
   onClickSave(): void {
