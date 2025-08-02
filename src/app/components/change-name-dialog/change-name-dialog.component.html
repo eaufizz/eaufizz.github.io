@@ -12,12 +12,20 @@
           (valueChange)="onValueChange($event)"
         ></app-input-form>
       </div>
+      <span class="alert" *ngIf="isDuplicate">※すでに登録済みです</span>
+      <span class="alert" *ngIf="isOver">※文字数オーバーです</span>
     </div>
     <div class="buttons">
       <button (click)="onClickClose()">
         <span>戻る</span>
       </button>
-      <button (click)="onClickChange()">
+      <button
+        (click)="onClickChange()"
+        [disabled]="
+          (isDuplicate || newName === '' || isOver) &&
+          newName !== 'delete user'
+        "
+      >
         <span>変更</span>
       </button>
     </div>

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Player, ScoreAppService } from '../../core/service/ScoreAppService';
+import GraphemeSplitter from 'grapheme-splitter';
 
 @Component({
   selector: 'app-change-name-dialog',
@@ -16,6 +17,8 @@ export class ChangeNameDialogComponent {
 
   initName: string = "";
   newName: string = "";
+  isDuplicate: boolean = false;
+  isOver: boolean = false;
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -43,5 +46,19 @@ export class ChangeNameDialogComponent {
 
   onValueChange(value: string): void {
     this.newName = value;
+    this.isDuplicate = this.scoreAppService.isDuplicatePlayer(this.newName);
+    if (this.getCustomLength(value) > 10) {
+      this.isOver = true;
+    } else {
+      this.isOver = false;
+    }
+  }
+
+  getCustomLength(value: string): number {
+    const splitter = new GraphemeSplitter();
+    const graphemes = splitter.splitGraphemes(value);
+    return graphemes.reduce((sum, char) => {
+      return sum + (char.match(/[ -~]/) ? 0.5 : 1);
+    }, 0);
   }
 }

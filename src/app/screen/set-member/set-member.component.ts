@@ -7,6 +7,7 @@ import {
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { InputFormComponent } from '../../components/input-form/input-form.component';
+import GraphemeSplitter from 'grapheme-splitter';
 
 @Component({
   selector: 'app-set-member',
@@ -109,11 +110,11 @@ export class SetMemberComponent {
   }
 
   getCustomLength(value: string): number {
-    let length = 0;
-    for (const char of value) {
-      length += char.match(/[ -~]/) ? 0.5 : 1;
-    }
-    return length;
+    const splitter = new GraphemeSplitter();
+    const graphemes = splitter.splitGraphemes(value);
+    return graphemes.reduce((sum, char) => {
+      return sum + (char.match(/[ -~]/) ? 0.5 : 1);
+    }, 0);
   }
 
   toggleShowDialog(): void {

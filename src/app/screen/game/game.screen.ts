@@ -101,6 +101,9 @@ export class GameComponent {
         this.activeTeam.miss += 1;
         if (this.activeTeam.miss === 3) {
           this.activeTeam.score = 0;
+          for (const member of this.activeTeam.member) {
+            member.sets[this.setCount - 1].dropout = true;
+          }
         }
       } else {
         this.activeTeam.miss = 0;
@@ -171,10 +174,20 @@ export class GameComponent {
 
   finishSet(): void {
     for (const member of this.activeTeam.member) {
-      member.sets[this.setCount - 1].win = true;
+      if (this.activeTeam.score === 50) {
+        member.sets[this.setCount - 1].win = true;
+      }
     }
     for (const team of this.teams) {
       team.totalScore += team.score;
+    }
+    if (this.teams.filter((team) => team.miss >= 3).length === this.teams.length - 1) {
+      const winner = this.teams.find((team) => team.miss < 3);
+      if (winner) {
+        for (const member of winner.member) {
+          member.sets[this.setCount - 1].win = true;
+        }
+      }
     }
     this.scoreAppService.setSelectedTeams(this.teams);
     this.scoreAppService.setSnapShot(this.snapShot);

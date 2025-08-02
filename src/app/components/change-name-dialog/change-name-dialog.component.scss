@@ -14,7 +14,7 @@
 
   .dialog {
     width: 317px;
-    height: 170px;
+    height: 210px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
     box-sizing: border-box;
 
     .message {
-      height: 88px;
+      height: 130px;
       font-size: 22px;
       font-weight: 700;
       text-align: center;
@@ -34,6 +34,10 @@
       .form {
         margin-top: 12px;
         height: 40px;
+      }
+
+      .alert {
+        color: red;
       }
     }
 
