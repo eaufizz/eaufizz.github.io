@@ -13,10 +13,10 @@
   align-items: center;
   justify-content: center;
   background-color: normal.$bgColor;
-  gap: clamp(4px, 100%, 96px);
+  gap: clamp(80px, 12.3vh, 120px);
 
   .home-icon {
-
+    height: clamp(180px, 26vh, 250px);
   }
 
   .buttons {
@@ -25,6 +25,9 @@
     gap: 16px;
 
     .button {
+      img {
+        height: clamp(64px, 9.6vh, 89px);
+      }
       &:hover {
         cursor: pointer;
       }
