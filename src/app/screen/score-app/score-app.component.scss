@@ -5,7 +5,7 @@
 }
 
 .home-container {
-  padding: 70px 24px 80px 24px;
+  padding: 8.6vh 2.96vh 9.85vh 2.96vh;
   width: 100%;
   height: 100%;
   display: flex;
@@ -13,21 +13,31 @@
   align-items: center;
   justify-content: center;
   background-color: normal.$bgColor;
-  gap: clamp(80px, 12.3vh, 120px);
+  gap: 12.3vh;
 
   .home-icon {
-    height: clamp(180px, 26vh, 250px);
+    height: 26vh;
   }
 
   .buttons {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1.97vh;
 
-    .button {
-      img {
-        height: clamp(64px, 9.6vh, 89px);
+    button {
+      width: 27.7vh;
+      height: 9vh;
+      box-shadow: 0 0.6vh  0 0 #B3772D;
+      border-radius: 2.59vh;
+      background-color: #D4913A;
+      border: none;
+
+      span {
+        font-size: 3.69vh;
+        font-weight: 700;
+        color: #FFEAB6;
       }
+
       &:hover {
         cursor: pointer;
       }

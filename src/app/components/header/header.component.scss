@@ -7,13 +7,13 @@
 .header-container {
   height: 70px;
   width: 100%;
-  max-width: 1000px;
   min-width: 375px;
   position: absolute;
   top: 0px;
   left: 0px;
   background-image: url("../../../assets/images/header_wood.svg");
   background-size: 750px 90px;
+  background-repeat: repeat;
 
   .header-img {
     position: absolute;
