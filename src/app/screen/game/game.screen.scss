@@ -7,15 +7,15 @@
 .page-container {
   width: 100%;
   height: 100%;
-  padding: 94px 24px 80px 24px;
+  padding: 11.58vh 2.96vh 9.85vh 2.96vh;
   background-color: normal.$bgColor;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .score-buttons {
-    width: 324px;
-    height: 240px;
+    width: 39.9vh;
+    height: 29.56vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,8 +24,8 @@
     .row {
       width: 100%;
       display: flex;
-      gap: 12px;
-      padding: 0px 24px;
+      gap: 1.48vh;
+      padding: 0 2.96vh;
       justify-content: center;
 
       &.row-4 {
@@ -33,20 +33,21 @@
       }
 
       button {
-        width: 60px;
-        height: 60px;
+        width: 7.39vh;
+        height: 7.39vh;
         padding: 0;
         background-color: #FFF9EB;
         border-radius: 50%;
         border: none;
-        font-size: 28px;
+        font-size: 3.57vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        color: black;
 
         &.fail {
-          border-radius: 8px;
-          margin-right: 24px;
+          border-radius: 0.99vh;
+          margin-right: 2.96vh;
 
           &.enabled {
             background-color: #FF6F3C;
@@ -58,7 +59,7 @@
         &.dummy {
           opacity: 0;
           pointer-events: none;
-          margin-left: 24px;
+          margin-left: 2.96vh;
         }
 
         &.enabled {
@@ -71,68 +72,79 @@
   }
 
   .buttons {
-    width: 324px;
-    height: 45px;
+    width: 39.9vh;
+    height: 5.54vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 24px;
-    gap: 12px;
+    margin-top: 2.96vh;
+    gap: 1.48vh;
 
     button {
-      width: 100px;
-      height: 45px;
-      border-radius: 8px;
+      width: 12.44vh;
+      height: 5.54vh;
+      border-radius: 0.99vh;
       border: none;
-      font-size: 22px;
+      font-size: 2.71vh;
       padding: 0;
 
       &.back {
         background-color: white;
+        border: 0.25vh solid #929292;
+
+        &:disabled {
+          border-color: rgba(146,146,146,0.3);
+        }
       }
 
       &.submit {
         background-color: #EDC987;
+        border: 0.25vh solid #7F5124;
+
+        &:disabled {
+          border-color: rgba(127,81,36,0.3);
+        }
       }
     }
   }
 
   .score-board {
-    width: 100%;
-    height: 298px;
-    margin-top: 24px;
+    width: 40.27vh;
+    max-width: 100%;
+    height: 290.99vh;
+    margin-top: 2.96vh;
     display: flex;
     flex-direction: column;
 
     .score-header {
-      height: 30px;
+      height: 3.69vh;
       display: flex;
       background-color: #C68854;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
+      border-top-left-radius: 0.49vh;
+      border-top-right-radius: 0.49vh;
 
       .space {
         flex: 1;
       }
 
       .column {
-        width: 64px;
+        width: 7.88vh;
         display: flex;
         align-items: center;
         justify-content: center;
 
         span {
-          height: 22px;
-          font-size: 16px;
+          height: 2.7vh;
+          font-size: 1.97vh;
           color: white;
-          border-bottom: 1px solid white;
+          border-bottom: 0.12vh solid white;
         }
       }
     }
 
     .contents {
       display: flex;
-      height: 64px;
+      height: 7.88vh;
       min-width: 0;
 
       .team-data {
@@ -143,7 +155,7 @@
         min-width: 0;
 
         &.current-team {
-          background-color: rgb(238, 144, 144);
+          background-color: #FFE0B2;
         }
 
         &.dropout-team {
@@ -158,24 +170,24 @@
 
         .data-header {
           display: flex;
-          height: 16px;
+          height: 1.97vh;
 
           .team-name {
             flex: 1;
-            margin-left: 8px;
-            font-size: 16px;
+            margin-left: 0.99vh;
+            font-size: 1.97vh;
             font-weight: 700;
           }
 
           .miss-count {
-            width: 64px;
-            margin-right: 8px;
+            width: 7.88vh;
+            margin-right: 0.99vh;
             display: flex;
-            gap: 8px;
+            gap: 0.99vh;
 
             .circle {
-              width: 16px;
-              height: 16px;
+              width: 1.97vh;
+              height: 1.97vh;
               border-radius: 50%;
               background-color: #D9D9D9;
 
@@ -193,9 +205,12 @@
           white-space: nowrap;
           min-width: 0;
           flex: 1;
+          display: flex;
+          align-items: center;
 
           span {
-            font-size: 28px;
+            margin: auto;
+            font-size: 2.46vh;
             display: block;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -206,13 +221,13 @@
       }
 
       .score {
-        width: 64px;
+        width: 7.88vh;
         background-color: #8CBF3E;
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 28px;
+        font-size: 3.57vh;
         font-weight: 700;
       }
 
@@ -222,10 +237,10 @@
     }
 
     .footer {
-      height: 12px;
+      height: 1.48vh;
       background-color: #C68854;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 0.49vh;
+      border-bottom-right-radius: 0.49vh;
     }
   }
 }
