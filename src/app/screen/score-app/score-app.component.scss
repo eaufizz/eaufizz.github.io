@@ -17,6 +17,18 @@
 
   .home-icon {
     height: 26vh;
+    display: flex;
+    flex-direction: column;
+
+    .image {
+      height: 20.94vh;
+      width: auto;
+    }
+
+    .title {
+      height: 8.25vh;
+      width: auto;
+    }
   }
 
   .buttons {

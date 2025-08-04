@@ -7,21 +7,23 @@
 .page-container {
   width: 100%;
   height: 100%;
-  padding: 70px 24px 80px 24px;
+  padding: 8.6vh 2.96vh 9.85vh 2.96vh;
   background-color: normal.$bgColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .buttons {
-    width: 200px;
+    width: 24.63vh;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    margin: 169px auto 0px auto;
+    gap: 2.96vh;
 
     .team-btn {
-      width: 200px;
-      height: 46px;
-      border: 3px solid normal.$buttonBorderColor;
-      border-radius: 8px;
+      width: 24.63vh;
+      height: 5.67vh;
+      border: 0.37vh solid normal.$buttonBorderColor;
+      border-radius: 0.99vh;
       background-color: normal.$buttonBgColor;
 
       &:hover {
@@ -30,7 +32,8 @@
 
       span {
         color: normal.$textColor;
-        font-size: 26px;
+        font-size: 3.2vh;
+        font-weight: 700;
       }
     }
   }

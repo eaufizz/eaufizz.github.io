@@ -5,7 +5,7 @@
 }
 
 .header-container {
-  height: 70px;
+  height: 8.62vh;
   width: 100%;
   min-width: 375px;
   position: absolute;
@@ -30,7 +30,7 @@
     height: 100%;
     z-index: 2;
     position:absolute;
-    padding: 24px 24px 0px 24px;
+    padding: 2.96vh 2.96vh 0 2.96vh;
     display: flex;
     gap: 11px;
 
@@ -45,10 +45,13 @@
         cursor: pointer;
       }
 
+      img {
+        width: 4.93vh;
+      }
     }
 
     .title {
-      font-size: clamp(24px, 3.7vh, 30px);
+      font-size: 3.7vh;
       color: normal.$titleColor;
       width: 100%;
       height: 40px;
