@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1754581823964,
+  "timestamp": 1754582257735,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,6 +13,7 @@
       "urls": [
         "/index.html",
         "/main-SQXDYOGA.js",
+        "/manifest.webmanifest",
         "/polyfills-B6TNHZQ6.js",
         "/styles-RKJAIGSF.css"
       ],
@@ -65,8 +66,9 @@
     "/assets/images/title.svg": "1ec057aa7251aeee507fc087cd52d82a932cb659",
     "/assets/images/title_image.svg": "14648a3982f7ac575f9dc476438884373b3587fa",
     "/assets/images/view_graph.svg": "a5cdb58b31da42583fba5b7a088c0de546b0b64f",
-    "/index.html": "1aebced306c298b39ef7d6aecd80959ed22e7a53",
+    "/index.html": "8080e4e84668995fc4f5341815a96a151d6f3799",
     "/main-SQXDYOGA.js": "f77a5336c1f8afce5b80a18a9130d06bcae4f41e",
+    "/manifest.webmanifest": "4713c64739ff581e059201e4ce98e3e23d0cfe54",
     "/media/header_wood-5UAILIWP.svg": "a66abd7aab267def14ecdfe339e9d37dcf1f83d5",
     "/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
     "/styles-RKJAIGSF.css": "e7f8bde121ff297115a8d18e4024a5f598d80fba"
