@@ -1,0 +1,77 @@
+{
+  "configVersion": 1,
+  "timestamp": 1754580768471,
+  "index": "/molkky-app/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/molkky-app/index.html",
+        "/molkky-app/main-SQXDYOGA.js",
+        "/molkky-app/polyfills-B6TNHZQ6.js",
+        "/molkky-app/styles-RKJAIGSF.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/molkky-app/assets/icon/back-button.svg",
+        "/molkky-app/assets/icon/home-button.svg",
+        "/molkky-app/assets/icon/molkky.svg",
+        "/molkky-app/assets/images/header_wood.svg",
+        "/molkky-app/assets/images/start_game.svg",
+        "/molkky-app/assets/images/title.svg",
+        "/molkky-app/assets/images/title_image.svg",
+        "/molkky-app/assets/images/view_graph.svg",
+        "/molkky-app/media/header_wood-5UAILIWP.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/molkky-app/assets/icon/back-button.svg": "ab698656c7ae2656ca7cb88a51f6cfa5a88ffa83",
+    "/molkky-app/assets/icon/home-button.svg": "3d2453e22f25de5ddd7413b7bc41a71408318ae8",
+    "/molkky-app/assets/icon/molkky.svg": "652ca4ea680fbe9d33a36fd8e38281b2d6fcc7f6",
+    "/molkky-app/assets/images/header_wood.svg": "a66abd7aab267def14ecdfe339e9d37dcf1f83d5",
+    "/molkky-app/assets/images/start_game.svg": "8ea551b1b11e1b7bcb3431322746e0d0671f133a",
+    "/molkky-app/assets/images/title.svg": "1ec057aa7251aeee507fc087cd52d82a932cb659",
+    "/molkky-app/assets/images/title_image.svg": "14648a3982f7ac575f9dc476438884373b3587fa",
+    "/molkky-app/assets/images/view_graph.svg": "a5cdb58b31da42583fba5b7a088c0de546b0b64f",
+    "/molkky-app/index.html": "f2dcde8c4e5545c5fb3b576fee6ca59ae3e8f1fb",
+    "/molkky-app/main-SQXDYOGA.js": "f77a5336c1f8afce5b80a18a9130d06bcae4f41e",
+    "/molkky-app/media/header_wood-5UAILIWP.svg": "a66abd7aab267def14ecdfe339e9d37dcf1f83d5",
+    "/molkky-app/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
+    "/molkky-app/styles-RKJAIGSF.css": "e7f8bde121ff297115a8d18e4024a5f598d80fba"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
