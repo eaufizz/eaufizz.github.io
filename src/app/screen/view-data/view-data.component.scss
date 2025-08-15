@@ -7,30 +7,30 @@
 .page-container {
   width: 100%;
   height: 100%;
-  padding: 70px 24px 80px 24px;
+  padding: 8.62vh 2.96vh 9.85vh 2.96vh;
   background-color: normal.$bgColor;
 
   .cards {
     width: 100%;
-    margin-top: 8px;
+    margin-top: 0.99vh;
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
 
     .card {
       width: 32%;
-      height: 90px;
-      margin-top: 8px;
+      height: 11.08vh;
+      margin-top: 0.99vh;
       background-color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 0.99vh;
+      font-size: 1.97vh;
 
       &.selected {
-        border: 3px solid black;
+        border: 0.37vh solid black;
       }
 
       label {
@@ -39,26 +39,27 @@
         text-align: center;
 
         span {
-          font-size: 12px;
+          font-size: 1.48vh;
         }
       }
 
       .data {
-        font-size: 16px;
+        font-size: 1.97vh;
 
         span {
-          font-size: 22px;
+          font-size: 2.71vh;
           font-weight: 700;
         }
 
         .unit {
-          font-size: 12px;
+          font-size: 1.48vh;
         }
       }
     }
   }
 
-  ngx-charts-line-chart {
-    height: 300px !important;
+  .chart-container {
+    margin-top: 2vh;
+    height: 42vh;
   }
 }

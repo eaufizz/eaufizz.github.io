@@ -9,19 +9,19 @@
   width: 100%;
   min-width: 375px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   background-image: url("../../../assets/images/header_wood.svg");
-  background-size: 750px 90px;
+  background-size: 92.36vh 11.08vh;
   background-repeat: repeat;
 
   .header-img {
     position: absolute;
     width: 100%;
-    height: 70px;
+    height: 8.62vh;
     object-fit: fill;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     display: block;
   }
 
@@ -32,14 +32,14 @@
     position:absolute;
     padding: 2.96vh 2.96vh 0 2.96vh;
     display: flex;
-    gap: 11px;
+    gap: 1.35vh;
 
 
     .button {
       z-index: 3;
       border: none;
       background-color: rgba(0,0,0,0);
-      padding: 0px;
+      padding: 0;
 
       &:hover {
         cursor: pointer;
@@ -54,7 +54,7 @@
       font-size: 3.7vh;
       color: normal.$titleColor;
       width: 100%;
-      height: 40px;
+      height: 4.93vh;
       text-align: center;
       font-weight: 700;
     }

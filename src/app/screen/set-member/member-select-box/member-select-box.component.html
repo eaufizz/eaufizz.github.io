@@ -3,6 +3,8 @@
     <mat-select
       [(ngModel)]="selectedOption"
       (selectionChange)="onSelected($event.value)"
+      panelWidth="33vh"
+      panelClass="member-select"
     >
       @for (option of options; track option) {
         <mat-option

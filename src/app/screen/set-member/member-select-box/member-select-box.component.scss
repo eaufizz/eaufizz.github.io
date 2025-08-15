@@ -1,18 +1,18 @@
 @use "../../../stylesheets/normal-color.scss" as normal;
 
 .select-box {
-  width: 134px;
-  height: 30px;
+  width: 16.5vh;
+  height: 3.69vh;
 }
 
 ::ng-deep .mat-mdc-text-field-wrapper {
-  width: 134px !important;
-  height: 30px !important;
+  width: 16.5vh !important;
+  height: 3.69vh !important;
   background-color: normal.$white !important;
-  border: 1px solid #B1B1B1;
+  border: 0.12vh solid #B1B1B1;
   padding: 0 !important;
-  padding-right: 8px !important;
-  border-radius: 6px !important;
+  padding-right: 0.99vh !important;
+  border-radius: 0.74vh !important;
   outline: none !important;
 
   .mat-mdc-form-field-focus-overlay {
@@ -36,11 +36,19 @@
 
 ::ng-deep .mat-mdc-select-panel {
   background-color: white !important;
-}
 
-mat-option {
-  &.selected {
-    opacity: 0.3;
-    pointer-events: none;
+  .mat-mdc-option {
+    height: 3.69vh !important;
+    min-height: 3.69vh !important;
+
+
+    &.selected {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    span{
+      font-size: 1.97vh !important;
+    }
   }
 }

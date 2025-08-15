@@ -20,6 +20,7 @@
         <span>戻る</span>
       </button>
       <button
+        class="change-name"
         (click)="onClickChange()"
         [disabled]="
           (isDuplicate || newName === '' || isOver) &&

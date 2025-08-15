@@ -24,8 +24,15 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              "src/icons",
+              {
+                "glob": "manifest.webmanifest",
+                "input": "src/assets",
+                "output": "./"
+              }
             ],
+
             "styles": [
               "src/styles.scss"
             ],
@@ -46,7 +53,9 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "src/ngsw-config.json",
+              "baseHref": "/molkky-app/"
             },
             "development": {
               "optimization": false,

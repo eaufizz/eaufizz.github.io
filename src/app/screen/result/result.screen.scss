@@ -7,55 +7,55 @@
 .page-container {
   width: 100%;
   height: 100%;
-  padding: 94px 24px 80px 24px;
+  padding: 11.08vh 2.96vh 9.85vh 2.96vh;
   background-color: normal.$bgColor;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .info {
-    font-size: 28px;
+    font-size: 3.45vh;
   }
 
   .score-board {
     width: 100%;
-    height: 298px;
-    margin-top: 24px;
+    height: 36.7vh;
+    margin-top: 2.96vh;
     display: flex;
     flex-direction: column;
 
     .score-header {
-      height: 30px;
+      height: 3.69vh;
       display: flex;
       background-color: #C68854;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
+      border-top-left-radius: 0.49vh;
+      border-top-right-radius: 0.49vh;
 
       .space {
         flex: 1;
       }
 
       .column {
-        width: 64px;
+        width: 7.88vh;
         display: flex;
         align-items: center;
         justify-content: center;
 
         span {
-          height: 22px;
-          font-size: 16px;
+          height: 2.71vh;
+          font-size: 1.97vh;
           color: white;
-          border-bottom: 1px solid white;
+          border-bottom: 0.12vh solid white;
         }
       }
     }
 
     .contents {
       display: flex;
-      height: 64px;
+      height: 7.88vh;
       min-width: 0;
-      border-top: 1px solid #F1F1F1;
-      border-bottom: 1px solid #F1F1F1;
+      border-top: 0.12vh solid #F1F1F1;
+      border-bottom: 0.12vh solid #F1F1F1;
 
       .team-data {
         flex: 1;
@@ -66,19 +66,19 @@
 
         .team-name {
           flex: 1;
-          margin-left: 8px;
-          font-size: 28px;
+          margin-left: 0.99vh;
+          font-size: 3.45vh;
         }
       }
 
       .score {
-        width: 64px;
+        width: 7.88vh;
         background-color: #8CBF3E;
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 28px;
+        font-size: 3.45vh;
         font-weight: 700;
       }
 
@@ -88,43 +88,43 @@
     }
 
     .footer {
-      height: 12px;
+      height: 1.48vh;
       background-color: #C68854;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 0.49vh;
+      border-bottom-right-radius: 0.49vh;
     }
   }
 
   .buttons {
-    width: 241px;
-    height: 167px;
+    width: 29.68vh;
+    height: 20.57vh;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1.97vh;
 
     button {
-      width: 241px;
-      height: 45px;
+      width: 29.68vh;
+      height: 5.54vh;
       padding: 0;
-      border-radius: 8px;
-      font-size: 22px;
+      border-radius: 0.99vh;
+      font-size: 2.71vh;
       color: black;
 
       &.continue {
         background-color: #6E3C0B;
-        border: 3px solid #7F5124;
+        border: 0.37vh solid #7F5124;
         color: white;
         font-weight: 700;
       }
 
       &.save {
         background-color: #EDC987;
-        border: 3px solid #7F5124;
+        border: 0.37vh solid #7F5124;
       }
 
       &.no-save {
         background-color: white;
-        border: 2px solid black;
+        border: 0.25vh solid black;
       }
     }
   }

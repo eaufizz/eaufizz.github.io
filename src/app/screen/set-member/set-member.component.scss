@@ -7,7 +7,7 @@
 .page-container {
   width: 100%;
   height: 100%;
-  padding: 70px 24px 80px 24px;
+  padding: 8.6vh 2.96vh 9.85vh 2.96vh;
   background-color: normal.$bgColor;
   display: flex;
   flex-direction: column;
@@ -23,32 +23,32 @@
     width: 100%;
   }
   .test {
-    font-size: 30px;
+    font-size: 3.69vh;
   }
 
   .cards {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1.23vh;
   }
 
   .buttons {
-    margin-top: 24px;
-    width: 327px;
+    margin-top: 2.96vh;
+    width: 40.27vh;
     display: flex;
-    gap: 13px;
+    gap: 1.6vh;
 
     button {
-      width: 157px;
-      height: 46px;
-      border: 3px solid normal.$buttonBorderColor;
-      border-radius: 8px;
+      width: 19.33vh;
+      height: 5.67vh;
+      border: 0.37vh solid normal.$buttonBorderColor;
+      border-radius: 0.99vh;
       background-color: normal.$buttonBgColor;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-
+      box-shadow: 0 0.37vh 0 normal.$buttonBorderColor;
 
       &:hover {
         cursor: pointer;
@@ -56,7 +56,7 @@
 
       span {
         color: normal.$textColor;
-        font-size: 22px;
+        font-size: 2.71vh;
       }
     }
   }
@@ -64,17 +64,15 @@
 
 .register-page {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1000px;
   min-width: 375px;
   height: 100%;
   min-height: 580px;
-  max-height: 900px;
 
   .forms {
-    width: 327px;
+    width: 40.27vh;
     height: 14vh;
     padding: 1.5vh 3.8vh 0 3.8vh;
     display: flex;
@@ -82,15 +80,15 @@
     gap: 1.5vh;
     background-color: normal.$white;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 0.99vh;
     box-sizing: border-box;
     margin-top: 5vh;
 
     label {
-      width: 265px;
+      width: 32.64vh;
       height: 3vh;
       font-weight: 700;
-      font-size: clamp(16px, 3vh, 24px);
+      font-size: 2.9vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -101,22 +99,23 @@
     }
 
     span {
+      font-size: 1.97vh;
       line-height: 16%;
       color: #FF0000;
     }
   }
 
   button {
-    width: 157px;
-    height: 46px;
-    border: 3px solid normal.$buttonBorderColor;
-    border-radius: 8px;
+    width: 19.33vh;
+    height: 5.67vh;
+    border: 0.37vh solid normal.$buttonBorderColor;
+    border-radius: 0.99vh;
     background-color: normal.$buttonBgColor;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 1.97vh;
 
     &:hover {
       cursor: pointer;
@@ -128,21 +127,21 @@
 
     span {
       color: normal.$textColor;
-      font-size: 22px;
+      font-size: 2.71vh;
     }
   }
 
   .player-lists {
-    width: 327px;
+    width: 40.27vh;
     height: 57%;
-    margin-top: 24px;
+    margin-top: 2.96vh;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.48vh;
 
     label {
       width: 100%;
-      font-size: 22px;
+      font-size: 2.71vh;
       font-weight: 700;
     }
 
@@ -151,8 +150,8 @@
       overflow-y: auto;
       overflow-x: hidden;
       background-color: normal.$white;
-      border-radius: 8px;
-      padding: 12px;
+      border-radius: 0.99vh;
+      padding: 1.48vh;
 
       &::-webkit-scrollbar {
         display: none;
@@ -160,15 +159,15 @@
 
       .list-item {
         width: 100%;
-        height: 44px;
-        border-bottom: 1px solid black;
+        height: 5.42vh;
+        border-bottom: 0.12vh solid black;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        scrollbar-width: 0px;
+        scrollbar-width: 0;
 
         span {
-          font-size: 22px;
+          font-size: 2.71vh;
           font-weight: 700;
         }
       }

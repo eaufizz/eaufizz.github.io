@@ -1,37 +1,44 @@
 @use "../../../stylesheets/normal-color.scss" as normal;
 
 .card-container {
-  width: 327px;
-  height: 125px;
+  width: 40.27vh;
+  height: 16.5vh;
   background-color: normal.$white;
-  padding: 6px;
+  padding: 0.74vh;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 0.99vh;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  gap: 15px;
+  gap: 1.85vh;
   align-items: center;
+  box-shadow: 0 0.62vh 0 rgba(0,0,0,0.25);
 
   .card-header {
-    width: 154px;
-    height: 29px;
+    width: 18.97vh;
+    height: 3.57vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     button {
-      width: 29px;
-      height: 29px;
+      width: 3.57vh;
+      height: 3.57vh;
       color: white;
-      font-size: 30px;
+      font-size: 3.69vh;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 0;
-      border: 1px solid black;
-      border-radius: 8px;
+      border: 0.24vh solid #3B3B3B;
+      border-radius: 0.98vh;
+      box-shadow: 0 0.37vh 0 #3B3B3B;
+
+      .minus {
+        height: 0.37vh;
+        width: 1.7vh;
+        background-color: white;
+      }
 
       &:hover {
         cursor: pointer;
@@ -53,18 +60,19 @@
     }
 
     .remove-btn {
-      background-color: #94FF22;
+      background-color: #FF6F3C;
     }
 
     .add-btn {
-      background-color: #FFA646;;
+      background-color: #8CBF3E;
     }
 
     .team-name {
-      width: 96px;
-      height: 26px;
+      width: 11.82vh;
+      height: 3.2vh;
       text-align: center;
       font-weight: 700;
+      font-size: 1.97vh;
     }
   }
 
@@ -72,11 +80,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 1.48vh;
 
     .member {
       display: flex;
-      gap: 2px;
+      gap: 0.25vh;
+      font-size: 1.97vh;
     }
   }
 }

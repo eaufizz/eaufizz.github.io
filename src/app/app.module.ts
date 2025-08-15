@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routing.module';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,6 @@ import { SelectNumberOfTeamsComponent } from './screen/select-number-of-teams/se
 import { TeamCardComponent } from './screen/set-member/team-card/team-card.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { SelectBoxComponent } from './components/select-box/select-box.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MemberSelectBoxComponent } from './screen/set-member/member-select-box/member-select-box.component';
 import { ResultComponent } from './screen/result/result.screen';
@@ -28,6 +27,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ChangeNameDialogComponent } from './components/change-name-dialog/change-name-dialog.component';
 import { DeletePlayerDialogComponent } from './components/delete-player-dialog/delete-player-dialog.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,6 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     GameComponent,
     SelectNumberOfTeamsComponent,
     TeamCardComponent,
-    SelectBoxComponent,
     MemberSelectBoxComponent,
     ResultComponent,
     ExitDialogComponent,
@@ -62,6 +61,12 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatProgressSpinnerModule,
     MatMenuModule,
     NgxChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

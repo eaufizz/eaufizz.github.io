@@ -4,8 +4,8 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   background-color: rgba(0,0,0,0.2);
   z-index: 10;
   display: flex;
@@ -13,27 +13,27 @@
   justify-content: center;
 
   .dialog {
-    width: 317px;
-    height: 210px;
+    width: 39.04vh;
+    height: 25.86vh;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    border: 1px solid black;
-    border-radius: 16px;
-    padding: 12px;
+    gap: 1.23vh;
+    border: 0.12vh solid black;
+    border-radius: 1.97vh;
+    padding: 1.48vh;
     box-sizing: border-box;
 
     .message {
-      height: 130px;
-      font-size: 22px;
+      height: 16.01vh;
+      font-size: 2.71vh;
       font-weight: 700;
       text-align: center;
 
       .form {
-        margin-top: 12px;
-        height: 40px;
+        margin-top: 1.48vh;
+        height: 4.93vh;
       }
 
       .alert {
@@ -43,17 +43,22 @@
 
     .buttons {
       display: flex;
-      gap: 13px;
+      gap: 1.6vh;
 
       button {
-        width: 140px;
-        height: 46px;
-        border: 3px solid  black;
-        border-radius: 8px;
+        width: 17.24vh;
+        height: 5.67vh;
+        border: 0.37vh solid  black;
+        border-radius: 0.99vh;
         background-color: #F1F1F1;
 
         span {
-          font-size: 22px;
+          font-size: 2.71vh;
+        }
+
+        &.change-name {
+          background-color: #FF6F3C;
+          color: white;
         }
       }
     }
