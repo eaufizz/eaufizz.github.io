@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1755267465053,
+  "timestamp": 1756022015194,
   "index": "/molkky-app/index.html",
   "assetGroups": [
     {
@@ -12,10 +12,10 @@
       },
       "urls": [
         "/molkky-app/index.html",
-        "/molkky-app/main-DI37JMRW.js",
+        "/molkky-app/main-X3V4UTCF.js",
         "/molkky-app/manifest.webmanifest",
         "/molkky-app/polyfills-B6TNHZQ6.js",
-        "/molkky-app/styles-RKJAIGSF.css"
+        "/molkky-app/styles-RVCLKVTW.css"
       ],
       "patterns": []
     },
@@ -27,6 +27,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/molkky-app/assets/fonts/nikumaru.otf",
         "/molkky-app/assets/icon/back-button.svg",
         "/molkky-app/assets/icon/home-button.svg",
         "/molkky-app/assets/icon/molkky.svg",
@@ -50,6 +51,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/molkky-app/assets/fonts/nikumaru.otf": "8c64e2d2fffeb794d6154619cc5c27461c5b1a2d",
     "/molkky-app/assets/icon/back-button.svg": "ab698656c7ae2656ca7cb88a51f6cfa5a88ffa83",
     "/molkky-app/assets/icon/home-button.svg": "3d2453e22f25de5ddd7413b7bc41a71408318ae8",
     "/molkky-app/assets/icon/molkky.svg": "652ca4ea680fbe9d33a36fd8e38281b2d6fcc7f6",
@@ -66,12 +68,12 @@
     "/molkky-app/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/molkky-app/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/molkky-app/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/molkky-app/index.html": "b9381e9eaacf95927beb2a4254d1c7bb84d6897e",
-    "/molkky-app/main-DI37JMRW.js": "4e10963202ac2acd038051cffb5e14b414aab871",
+    "/molkky-app/index.html": "cf413c04addb82a067f0c9e3402271a27d26d79f",
+    "/molkky-app/main-X3V4UTCF.js": "376394a07f189e6db920fd87c05e1062d16fb9da",
     "/molkky-app/manifest.webmanifest": "4713c64739ff581e059201e4ce98e3e23d0cfe54",
     "/molkky-app/media/header_wood-5UAILIWP.svg": "a66abd7aab267def14ecdfe339e9d37dcf1f83d5",
     "/molkky-app/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/molkky-app/styles-RKJAIGSF.css": "e7f8bde121ff297115a8d18e4024a5f598d80fba"
+    "/molkky-app/styles-RVCLKVTW.css": "7b1b685bc6bb3b2d51084df9b3448911f2c5ac36"
   },
   "navigationUrls": [
     {
