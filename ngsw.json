@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1756022015194,
+  "timestamp": 1756022644866,
   "index": "/molkky-app/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "/molkky-app/main-X3V4UTCF.js",
         "/molkky-app/manifest.webmanifest",
         "/molkky-app/polyfills-B6TNHZQ6.js",
-        "/molkky-app/styles-RVCLKVTW.css"
+        "/molkky-app/styles-7GB6NGVE.css"
       ],
       "patterns": []
     },
@@ -44,7 +44,8 @@
         "/molkky-app/icons/icon-512x512.png",
         "/molkky-app/icons/icon-72x72.png",
         "/molkky-app/icons/icon-96x96.png",
-        "/molkky-app/media/header_wood-5UAILIWP.svg"
+        "/molkky-app/media/header_wood-5UAILIWP.svg",
+        "/molkky-app/media/nikumaru-ENWND6RL.otf"
       ],
       "patterns": []
     }
@@ -68,12 +69,13 @@
     "/molkky-app/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/molkky-app/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/molkky-app/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/molkky-app/index.html": "cf413c04addb82a067f0c9e3402271a27d26d79f",
+    "/molkky-app/index.html": "1707c84c3a25287286be4375363293424b4f7b20",
     "/molkky-app/main-X3V4UTCF.js": "376394a07f189e6db920fd87c05e1062d16fb9da",
     "/molkky-app/manifest.webmanifest": "4713c64739ff581e059201e4ce98e3e23d0cfe54",
     "/molkky-app/media/header_wood-5UAILIWP.svg": "a66abd7aab267def14ecdfe339e9d37dcf1f83d5",
+    "/molkky-app/media/nikumaru-ENWND6RL.otf": "8c64e2d2fffeb794d6154619cc5c27461c5b1a2d",
     "/molkky-app/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/molkky-app/styles-RVCLKVTW.css": "7b1b685bc6bb3b2d51084df9b3448911f2c5ac36"
+    "/molkky-app/styles-7GB6NGVE.css": "4b0c087b985372214342fc43e19548f2070e2d4e"
   },
   "navigationUrls": [
     {
