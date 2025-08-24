@@ -28,6 +28,7 @@ import { ChangeNameDialogComponent } from './components/change-name-dialog/chang
 import { DeletePlayerDialogComponent } from './components/delete-player-dialog/delete-player-dialog.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ViewDataComponent,
     ChangeNameDialogComponent,
     DeletePlayerDialogComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,

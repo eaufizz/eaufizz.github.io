@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class ScoreAppComponent {
+  showPrivacyPolicy: boolean = false;
+
   constructor(
     private router: Router,
   ) {}
@@ -18,5 +20,9 @@ export class ScoreAppComponent {
 
   onClickViewData(): void {
     this.router.navigate(["view-data"]);
+  }
+
+  togglePrivacyPolicy(): void {
+    this.showPrivacyPolicy = !this.showPrivacyPolicy;
   }
 }

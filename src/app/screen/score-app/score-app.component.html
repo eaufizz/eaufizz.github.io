@@ -17,4 +17,13 @@
       <span>成績を見る</span>
     </button>
   </div>
+  <button
+    class="policy"
+    (click)="togglePrivacyPolicy()"
+  >
+    プライバシーポリシー
+  </button>
 </div>
+@if(showPrivacyPolicy === true) {
+  <app-privacy-policy (close)="togglePrivacyPolicy()"></app-privacy-policy>
+}

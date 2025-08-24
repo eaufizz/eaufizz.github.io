@@ -110,17 +110,23 @@
       </div>
     </div>
   </div>
-  <div class="chart-container">
-    <ngx-charts-line-chart
-      [results]="filteredChart"
-      [scheme]="'vivid'"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="false"
-      [autoScale]="true"
-      [timeline]="true"
-      [animations]="true"
-    >
-    </ngx-charts-line-chart>
-  </div>
+  @if(filteredChart.length > 0) {
+    <div class="chart-container">
+      <ngx-charts-line-chart
+        [results]="filteredChart"
+        [scheme]="'vivid'"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [autoScale]="true"
+        [timeline]="true"
+        [animations]="true"
+      >
+      </ngx-charts-line-chart>
+    </div>
+  } @else {
+    <div class="guide">
+      <span>上の項目を選択してグラフ表示！</span>
+    </div>
+  }
 </div>

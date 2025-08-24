@@ -10,6 +10,7 @@ import { SelectNumberOfTeamsComponent } from './screen/select-number-of-teams/se
 import { ResultComponent } from './screen/result/result.screen';
 import { SelectPlayerComponent } from './screen/select-player/select-player.component';
 import { ViewDataComponent } from './screen/view-data/view-data.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   { path: '', component: ScoreAppComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'result', component: ResultComponent },
   { path: 'view-data', component: SelectPlayerComponent },
   { path: 'view-data/:id', component: ViewDataComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
 ];
 
 @NgModule({
