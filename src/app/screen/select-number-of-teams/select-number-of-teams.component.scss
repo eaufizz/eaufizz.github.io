@@ -25,6 +25,7 @@
       border: 0.37vh solid normal.$buttonBorderColor;
       border-radius: 0.99vh;
       background-color: normal.$buttonBgColor;
+      box-shadow: 0 0.37vh 0 normal.$buttonBorderColor;
 
       &:hover {
         cursor: pointer;
