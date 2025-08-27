@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1756296120720,
+  "timestamp": 1756301521844,
   "index": "/molkky-app/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "/molkky-app/index.html",
-        "/molkky-app/main-UN34SIE4.js",
+        "/molkky-app/main-KFT22TM3.js",
         "/molkky-app/manifest.webmanifest",
         "/molkky-app/polyfills-B6TNHZQ6.js",
         "/molkky-app/styles-QXIHVD4Y.css"
@@ -69,8 +69,8 @@
     "/molkky-app/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/molkky-app/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/molkky-app/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/molkky-app/index.html": "026c5c4c30b7949846cf93a89747d4f0813ba5c6",
-    "/molkky-app/main-UN34SIE4.js": "b1293b7c2e2c340dd58c316b5b8273f506edc501",
+    "/molkky-app/index.html": "bacc2ce1619f53318289f55460b9d68b2e9d5192",
+    "/molkky-app/main-KFT22TM3.js": "80fbe7eecdc883869694b987d9fc792a571b4e65",
     "/molkky-app/manifest.webmanifest": "4713c64739ff581e059201e4ce98e3e23d0cfe54",
     "/molkky-app/media/header_wood-5UAILIWP.svg": "a66abd7aab267def14ecdfe339e9d37dcf1f83d5",
     "/molkky-app/media/nikumaru-ENWND6RL.otf": "8c64e2d2fffeb794d6154619cc5c27461c5b1a2d",
