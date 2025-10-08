@@ -34,6 +34,7 @@
 
     .message-container {
       overflow-y: scroll;
+      overflow-x: hidden;
       height: 70vh;
       width: 90%;
 
@@ -42,6 +43,15 @@
         font-size: 2vh;
         font-weight: 700;
       }
+    }
+
+    .checkbox-container {
+      input {
+        height: 1.97vh;
+        width: 1.97vh;
+      }
+
+      font-size: 1.97vh;
     }
 
     button {
@@ -53,6 +63,10 @@
 
       span {
         font-size: 2.71vh;
+      }
+
+      &:disabled {
+        opacity: 0.3;
       }
     }
   }
