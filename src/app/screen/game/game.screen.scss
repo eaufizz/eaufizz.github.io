@@ -33,6 +33,7 @@
       }
 
       button {
+        font-weight: 700;
         width: 7.39vh;
         height: 7.39vh;
         padding: 0;
@@ -87,22 +88,28 @@
       border: none;
       font-size: 2.71vh;
       padding: 0;
+      font-weight: 700;
 
       &.back {
-        background-color: white;
-        border: 0.25vh solid #929292;
+        border: 0.37vh solid  #3B3B3B;
+        border-radius: 0.99vh;
+        background-color: #F1F1F1;
+        box-shadow: 0 0.49vh 0 #3B3B3B;
 
         &:disabled {
-          border-color: rgba(146,146,146,0.3);
+          opacity: 0.3;
         }
       }
 
       &.submit {
         background-color: #EDC987;
-        border: 0.25vh solid #7F5124;
+        border: 0.37vh solid normal.$buttonBorderColor;
+        border-radius: 0.99vh;
+        background-color: normal.$buttonBgColor;
+        box-shadow: 0 0.49vh 0 normal.$buttonBorderColor;
 
         &:disabled {
-          border-color: rgba(127,81,36,0.3);
+          opacity: 0.3;
         }
       }
     }
@@ -137,7 +144,7 @@
           height: 2.7vh;
           font-size: 1.97vh;
           color: white;
-          border-bottom: 0.12vh solid white;
+          font-weight: 700;
         }
       }
     }
@@ -199,7 +206,6 @@
         }
 
         .member-name {
-          padding: 0;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -216,6 +222,8 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             width: 100%;
+            font-weight: 700;
+            text-align: center;
           }
         }
       }
@@ -232,7 +240,7 @@
       }
 
       .total {
-        background-color: black;
+        background-color: #6E3C0B;
       }
     }
 

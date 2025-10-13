@@ -11,11 +11,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: normal.$bgColor;
   gap: 12.3vh;
 
   .home-icon {
+    margin-top: 8.5vh;
     height: 26vh;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
     }
 
     .title {
-      height: 14vh;
+      height: 16vh;
       width: auto;
       font-family: "Cherry Bomb One";
       font-size: 7.4vh;
@@ -34,12 +34,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
       span {
         font-family: "Cherry Bomb One";
         color: #592C15;
         font-size: 2.46vh;
         line-height: 20%;
+        letter-spacing: 1.7vh;
+        margin-left: 1.7vh;
       }
     }
   }
@@ -52,7 +55,7 @@
     button {
       width: 27.7vh;
       height: 9vh;
-      box-shadow: 0 0.6vh  0 0 #B3772D;
+      box-shadow: 0 0.74vh  0 0 #B3772D;
       border-radius: 2.59vh;
       background-color: #D4913A;
       border: none;
@@ -71,9 +74,13 @@
   }
 
   .policy {
+    width: 18.22vh;
     color: black;
     background-color: white;
-    border-radius: 0.5vh;
-    font-size: 1.48vh;
+    border-radius: 1vh;
+    border: none;
+    font-size: 1.84vh;
+    font-family: "Cherry Bomb One";
+    box-shadow: 0 0.6vh  0 0 black;
   }
 }

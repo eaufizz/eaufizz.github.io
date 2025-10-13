@@ -55,19 +55,7 @@
   >
     <span>追加</span>
   </button>
-  <div class="player-lists">
-    <label for="">◇プレイヤーリスト</label>
-    <div class="player-list">
-      <ng-container *ngFor="let player of registeredPlayer">
-        <div
-          class="list-item"
-          *ngIf="player.id !== 'guest'"
-        >
-          <span>{{player.name}}</span>
-        </div>
-      </ng-container>
-    </div>
-  </div>
+  <app-player-list></app-player-list>
 </div>
 <app-check-name-dialog
   *ngIf="showCheckDialog"

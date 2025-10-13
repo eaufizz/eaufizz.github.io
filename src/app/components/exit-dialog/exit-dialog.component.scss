@@ -20,7 +20,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1.23vh;
-    border: 0.12vh solid black;
+    border: 0.36vh solid #3B3B3B;
+    box-shadow: 0 0.86vh 0 #3B3B3B;
     border-radius: 1.97vh;
     padding: 1.48vh;
     box-sizing: border-box;
@@ -39,12 +40,19 @@
       button {
         width: 17.24vh;
         height: 5.67vh;
-        border: 0.37vh solid  black;
+        border: 0.37vh solid  #3B3B3B;
         border-radius: 0.99vh;
         background-color: #F1F1F1;
+        box-shadow: 0 0.37vh 0 #3B3B3B;
 
         span {
           font-size: 2.71vh;
+          font-weight: 700;
+        }
+
+        &.ok {
+          background-color: #FF0051;
+          color: white;
         }
       }
     }

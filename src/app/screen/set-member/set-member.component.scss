@@ -48,7 +48,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 0.37vh 0 normal.$buttonBorderColor;
+      box-shadow: 0 0.49vh 0 normal.$buttonBorderColor;
+      font-weight: 700;
 
       &:hover {
         cursor: pointer;
@@ -132,49 +133,12 @@
     span {
       color: normal.$textColor;
       font-size: 2.71vh;
+      font-weight: 700;
     }
   }
 
-  .player-lists {
-    width: 40.27vh;
+  app-player-list {
     height: 57%;
-    margin-top: 2.96vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1.48vh;
-
-    label {
-      width: 100%;
-      font-size: 2.71vh;
-      font-weight: 700;
-    }
-
-    .player-list {
-      flex: 1;
-      overflow-y: auto;
-      overflow-x: hidden;
-      background-color: normal.$white;
-      border-radius: 0.99vh;
-      padding: 1.48vh;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      .list-item {
-        width: 100%;
-        height: 5.42vh;
-        border-bottom: 0.12vh solid black;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        scrollbar-width: 0;
-
-        span {
-          font-size: 2.71vh;
-          font-weight: 700;
-        }
-      }
-    }
+    width: 100%;
   }
 }
