@@ -1,0 +1,22 @@
+<div
+  class="dialog-container"
+  (click)="onClickClose()">
+  <div class="dialog">
+    <div class="message">
+      <span>
+        次のセットを始めますか？
+      </span>
+    </div>
+    <div class="buttons">
+      <button (click)="onClickClose()">
+        <span>いいえ</span>
+      </button>
+      <button
+        class="play-button"
+        (click)="onClickContinue()"
+      >
+        <span>はい</span>
+      </button>
+    </div>
+  </div>
+</div>

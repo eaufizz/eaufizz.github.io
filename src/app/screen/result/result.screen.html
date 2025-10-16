@@ -10,29 +10,32 @@
   </div>
   <div class="score-board">
     <div class="score-header">
-      <div class="space"></div>
-      <div
-        class="column"
-        (click)="moveMonth(-1)">
+      <div class="column rank">
+        <span>順位</span>
+      </div>
+      <div class="column team-name">
+        <span>チーム名</span>
+      </div>
+      <div class="column">
         <span>セット</span>
       </div>
-      <div
-        class="column"
-        (click)="moveMonth(1)"
-      >
+      <div class="column">
         <span>合計</span>
       </div>
     </div>
-    <div
-      class="contents"
-      *ngFor="let team of teams"
-    >
-      <div class="team-data">
-        <div class="team-name">{{team.name}}</div>
+    @for (team of displayTeams; let i = $index; track team) {
+      <div class="contents">
+        <div
+          class="team-data"
+          [ngClass]="{'first': i == 0}"
+        >
+          <div class="rank">{{i+1}}位</div>
+          <div class="team-name">{{team.name}}</div>
+        </div>
+        <div class="score">{{team.score}}</div>
+        <div class="total score">{{team.totalScore}}</div>
       </div>
-      <div class="score">{{team.score}}</div>
-      <div class="total score">{{team.totalScore}}</div>
-    </div>
+    }
     <div class="footer"></div>
   </div>
   <div class="buttons">
@@ -61,3 +64,8 @@
   [navigate]="navigateRoot"
   (close)="closeDialog()"
 ></app-exit-dialog>
+<app-continue-game-dialog
+  *ngIf="showContinueDialog"
+  (close)="closeContinueDialog()"
+  (continue)="continue()"
+></app-continue-game-dialog>

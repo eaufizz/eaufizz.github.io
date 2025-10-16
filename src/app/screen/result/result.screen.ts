@@ -13,8 +13,10 @@ import {
 })
 export class ResultComponent {
   teams: Team[] = [];
+  displayTeams: Team[] = [];
   setCount: number = 1;
   showDialog: boolean = false;
+  showContinueDialog: boolean = false;
   navigateRoot: string = "";
   monthOffset: number = 0;
 
@@ -32,18 +34,28 @@ export class ResultComponent {
     if (this.setCount === 0) {
       this.moveToSelectTeam();
     }
+    this.displayTeams = this.teams.slice();
+    this.displayTeams.sort((a, b) => b.totalScore - a.totalScore);
   }
 
-  onClickContinue(): void {
-    this.scoreAppService.setSnapShot([]);
-    this.scoreAppService.setSetCount(this.setCount + 1);
-    if (this.teams.length === 2) {
-      [this.teams[0], this.teams[1]] = [this.teams[1], this.teams[0]];
-    } else if (this.teams.length >= 3) {
-      this.sortTeam();
+    onClickContinue(): void {
+      this.showContinueDialog = true;
     }
-    this.router.navigate(["game"]);
-  }
+
+    closeContinueDialog(): void {
+      this.showContinueDialog = false;
+    }
+
+    continue(): void {
+      this.scoreAppService.setSnapShot([]);
+      this.scoreAppService.setSetCount(this.setCount + 1);
+      if (this.teams.length === 2) {
+        [this.teams[0], this.teams[1]] = [this.teams[1], this.teams[0]];
+      } else if (this.teams.length >= 3) {
+        this.sortTeam();
+      }
+      this.router.navigate(["game"]);
+    }
 
   sortTeam(): void {
     this.teams.sort((a, b) => a.score - b.score);
