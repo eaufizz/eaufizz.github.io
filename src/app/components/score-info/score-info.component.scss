@@ -1,0 +1,86 @@
+@use "../../stylesheets/normal-color.scss" as normal;
+
+.dialog-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .dialog {
+    width: 39.04vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    border: 0.12vh solid black;
+    border-radius: 1.97vh;
+    padding: 1.48vh;
+    box-sizing: border-box;
+
+    .row {
+      display: flex;
+      height: 5.54vh;
+
+
+      .button {
+        width: 12.44vh;
+        height: 5.54vh;
+        border-radius: 0.99vh;
+        border: none;
+        font-size: 2.71vh;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &.back {
+          border: 0.37vh solid  #3B3B3B;
+          border-radius: 0.99vh;
+          background-color: #F1F1F1;
+          box-shadow: 0 0.49vh 0 #3B3B3B;
+
+          &:disabled {
+            opacity: 0.3;
+          }
+        }
+
+        &.submit {
+          background-color: #EDC987;
+          border: 0.37vh solid normal.$buttonBorderColor;
+          border-radius: 0.99vh;
+          background-color: normal.$buttonBgColor;
+          box-shadow: 0 0.49vh 0 normal.$buttonBorderColor;
+
+          &:disabled {
+            opacity: 0.3;
+          }
+        }
+
+        &.fail {
+          background-color: #FF6F3C;
+          color: white;
+          width: 5.54vh;
+          margin: 0 3.5vh;
+        }
+      }
+      
+      span {
+        width: 21vh;
+        height: 100%;
+        text-align: center;
+        font-weight: 700;
+        line-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

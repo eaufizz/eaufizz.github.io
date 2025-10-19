@@ -29,6 +29,7 @@ export class GameComponent {
   showDialog: boolean = false;
   navigateRoot: string = "";
   isBreak: boolean = true;
+  showInfo: boolean = false;
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -223,6 +224,14 @@ export class GameComponent {
 
   moveToSelectTeam(): void {
     this.router.navigate(["select-team"])
+  }
+
+  openInfo(): void {
+    this.showInfo = true;
+  }
+
+  closeInfo(): void {
+    this.showInfo = false;
   }
 
   debug(): void {

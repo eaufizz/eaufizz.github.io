@@ -31,6 +31,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { ContinueGameDialogComponent } from './components/continue-game-dialog/continue-game-dialog.component';
+import { ScoreInfoComponent } from './components/score-info/score-info.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ContinueGameDialogComponent } from './components/continue-game-dialog/c
     PrivacyPolicyComponent,
     PlayerListComponent,
     ContinueGameDialogComponent,
+    ScoreInfoComponent,
   ],
   imports: [
     BrowserModule,

@@ -75,14 +75,14 @@ export class ViewDataComponent {
     private scoreAppService: ScoreAppService,
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     const id = this.route.snapshot.paramMap.get("id");
     if (id !== null) {
       const player = this.scoreAppService.getPlayerFromID(id);
       if (player) {
         this.targetName = player.name;
       }
-      const data = this.scoreAppService.getDataFromID(id);
+      const data = await this.scoreAppService.getDataFromID(id);
       if (data) {
         this.calculateData(data);
         const monthlyData = this.calculateMonthlyTrends(data);

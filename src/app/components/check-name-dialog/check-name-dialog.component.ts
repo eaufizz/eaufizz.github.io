@@ -25,9 +25,4 @@ export class CheckNameDialogComponent {
   onClickAgree(): void {
     this.agree.emit();
   }
-
-  onClickDelete(): void {
-    localStorage.clear();
-    location.reload();
-  }
 }

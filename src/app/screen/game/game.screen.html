@@ -65,7 +65,10 @@
         [ngClass]="{'enabled': selectedButton === 2}"
         (click)="onClickScoreButton(2)"
       >2</button>
-      <button class="dummy"></button>
+      <button
+        class="info"
+        (click)="openInfo()"  
+      >?</button>
     </div>
   </div>
   <div class="buttons">
@@ -144,3 +147,8 @@
   [navigate]="navigateRoot"
   (close)="closeDialog()"
 ></app-exit-dialog>
+@if(showInfo) {
+  <app-score-info
+    (close)="closeInfo()"
+  ></app-score-info>
+}

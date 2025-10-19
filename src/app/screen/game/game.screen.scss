@@ -57,10 +57,13 @@
           }
         }
 
-        &.dummy {
-          opacity: 0;
-          pointer-events: none;
-          margin-left: 2.96vh;
+        &.info {
+          margin-left: 6vh;
+          margin-top: 3.3vh;
+          width: 3.7vh;
+          height: 3.7vh;
+          font-size: 2.83vh;
+          border: 0.25vh solid black;
         }
 
         &.enabled {
