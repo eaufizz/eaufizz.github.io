@@ -30,6 +30,7 @@ export class ViewDataComponent {
   foulRate: number = 0;
   overFiftyRate: number = 0;
   dropoutRate: number = 0;
+  showInfo: boolean = false;
 
   chartFilter: string[] = [];
   filteredChart: ChartData[] = [];
@@ -95,6 +96,7 @@ export class ViewDataComponent {
   calculateData(data: PlayData): void {
     let setCount: number = 0;
     let winCount: number = 0;
+    let aloneCount: number = 0;
     let winningTurn: number = 0;
     let breakCount: number = 0;
     let breakScore: number = 0;
@@ -108,7 +110,10 @@ export class ViewDataComponent {
     for (const match of data.matches) {
       for (const set of match.sets) {
         setCount++;
-        if (set.win) {
+        if (set.win === undefined) {
+          aloneCount++;
+        }
+        if (set.win === true) {
           winCount++;
           winningTurn += set.turn;
         }
@@ -133,7 +138,7 @@ export class ViewDataComponent {
     }
 
     if (winCount > 0 && setCount > 0) {
-      this.setWinRate = Math.round(winCount / setCount * 10000) / 100;
+      this.setWinRate = Math.round(winCount / (setCount - aloneCount) * 10000) / 100;
     }
     if (winCount > 0 && winningTurn > 0) {
       this.averageWinningTurns = Math.round(winningTurn / winCount * 100) / 100;
@@ -302,4 +307,12 @@ setChartDataFromMonthlyTrends(monthlyData: any[]): void {
       }
     }
   }
+
+  openInfo(): void {
+    this.showInfo = true;
+  }
+
+  closeInfo(): void {
+    this.showInfo = false;
+   }
 }

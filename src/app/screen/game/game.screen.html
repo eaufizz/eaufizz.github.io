@@ -37,6 +37,9 @@
         (click)="onClickScoreButton(6)"
       >6</button>
     </div>
+    @if (showInfoText) {
+      <div class="info-text">狙い通り！</div>
+    }
     <div class="row row-3">
       <button
         [ngClass]="{'enabled': selectedButton === 3}"
@@ -73,6 +76,13 @@
   </div>
   <div class="buttons">
     <button
+      class="submit"
+      (click)="onClickSubmit(false)"
+      [disabled]="selectedButton === 13"
+    >
+      決定
+    </button>
+    <button
       class="back"
       (click)="onClickBack()"
       [disabled]="snapShot.length === 0"
@@ -81,15 +91,8 @@
     </button>
     <button
       class="submit"
-      (click)="onClickSubmit(false)"
-      [disabled]="selectedButton === 13"
-    >
-      決定
-    </button>
-    <button
-      class="submit"
       (click)="onClickSubmit(true)"
-      [disabled]="selectedButton === 13"
+      [disabled]="selectedButton === 13 || selectedButton === 0"
     >
       狙い通り
     </button>

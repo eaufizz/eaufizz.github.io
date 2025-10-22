@@ -30,6 +30,7 @@ export class GameComponent {
   navigateRoot: string = "";
   isBreak: boolean = true;
   showInfo: boolean = false;
+  showInfoText: boolean = false;
 
   constructor(
     private scoreAppService: ScoreAppService,
@@ -90,6 +91,8 @@ export class GameComponent {
       }
       if (isCritical) {
         this.activeTeam.currentPlayer.sets[this.setCount - 1].critical ++;
+        this.showInfoText = true;
+        setTimeout(() => {this.showInfoText = false}, 1000);
       }
       if (this.activeTeam.score > 50) {
         this.activeTeam.score = 25;
@@ -177,6 +180,9 @@ export class GameComponent {
     for (const member of this.activeTeam.member) {
       if (this.activeTeam.score === 50) {
         member.sets[this.setCount - 1].win = true;
+        if (this.teams.length === 1) {
+          member.sets[this.setCount - 1].win = undefined;
+        }
       }
     }
     for (const team of this.teams) {
@@ -187,6 +193,9 @@ export class GameComponent {
       if (winner) {
         for (const member of winner.member) {
           member.sets[this.setCount - 1].win = true;
+          if (this.teams.length === 1) {
+            member.sets[this.setCount - 1].win = undefined;
+          }
         }
       }
     }

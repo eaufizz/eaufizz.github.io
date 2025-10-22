@@ -20,6 +20,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+
+    .info-text {
+      position: absolute;
+      font-size: 4.3vh;
+      font-weight: 700;
+      color: #4A90E2;
+      text-shadow: 0 0.4vh 1vh rgba(0,0,0,0.3);
+    }
 
     .row {
       width: 100%;

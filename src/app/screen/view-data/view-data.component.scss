@@ -19,19 +19,20 @@
     margin-top: 0.99vh;
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
+    column-gap: 0.3vh;
+    row-gap: 1vh;
 
     .card {
-      width: 32%;
+      width: calc((100% - 0.6vh) / 3);
       height: 11.08vh;
-      margin-top: 0.99vh;
       background-color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       border-radius: 0.99vh;
-      font-size: 1.97vh;
+      font-size: 2.46vh;
+      box-shadow: 0 0.3vh 1vh rgba(0,0,0,0.25);
 
       &.selected {
         border: 0.37vh solid black;
@@ -48,10 +49,10 @@
       }
 
       .data {
-        font-size: 1.97vh;
+        font-size: 2.71vh;
 
         span {
-          font-size: 2.71vh;
+          font-size: 3.7vh;
           font-weight: 700;
         }
 
@@ -60,6 +61,21 @@
         }
       }
     }
+
+    .info {
+      width: 3.7vh;
+      height: 3.7vh;
+      margin: auto 0 0 auto;
+      color: black;
+      background-color: #f1f1f1;
+      border-radius: 50%;
+      font-size: 2.8vh;
+      font-weight: 700;
+      border: 0.25vh solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .chart-container {
@@ -67,12 +83,16 @@
   }
 
   .guide {
-    height: 8vh;
-    background-color: normal.$buttonBgColor;
-    border: 0.37vh solid normal.$buttonBorderColor;
+    height: 100%;
+    width: 100%;
+    background-color: white;
     display: flex;
+    box-shadow: 0 0.3vh 1vh rgba(0,0,0,0.25);
     justify-content: center;
-    font-size: 2vh;
+    align-items: center;
+    font-size: 2.46vh;
+    text-align: center;
+    color: #686868;
     padding: 2vh;
     font-weight: 700;
     border-radius: 1vh;

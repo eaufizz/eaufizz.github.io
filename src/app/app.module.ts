@@ -32,6 +32,7 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { ContinueGameDialogComponent } from './components/continue-game-dialog/continue-game-dialog.component';
 import { ScoreInfoComponent } from './components/score-info/score-info.component';
+import { DataInfoComponent } from './components/data-info/data-info.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ScoreInfoComponent } from './components/score-info/score-info.component
     PlayerListComponent,
     ContinueGameDialogComponent,
     ScoreInfoComponent,
+    DataInfoComponent,
   ],
   imports: [
     BrowserModule,

@@ -47,7 +47,7 @@ export interface SetData {
   critical: number;
   over: number;
   dropout: boolean;
-  win: boolean;
+  win?: boolean;
   turn: number;
 }
 
@@ -75,9 +75,6 @@ export class ScoreAppService {
     this.initDB().then(() => this.loadPlayers());
   }
 
-  // ===============================
-  // IndexedDB 初期化
-  // ===============================
   private initDB(): Promise<void> {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(DB_NAME, DB_VERSION);
@@ -128,18 +125,6 @@ export class ScoreAppService {
     });
   }
 
-  private deleteFromStore(storeName: string, key: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const { store } = this.transaction(storeName, 'readwrite');
-      const request = store.delete(key);
-      request.onsuccess = () => resolve();
-      request.onerror = (e) => reject(e);
-    });
-  }
-
-  // ===============================
-  // プレイヤー管理
-  // ===============================
   private async loadPlayers() {
     const guest: User = { name: 'ゲスト', id: 'guest' };
     const users = await this.getAllFromStore<User>(STORE_PLAYERS);
@@ -155,7 +140,7 @@ export class ScoreAppService {
     const noGuest = players.filter((p) => p.id !== 'guest');
     const tx = this.db.transaction(STORE_PLAYERS, 'readwrite');
     const store = tx.objectStore(STORE_PLAYERS);
-    store.clear(); // 全削除して再登録
+    store.clear();
     for (const player of noGuest) {
       const user = { name: player.name, id: player.id };
       store.put(user);
@@ -230,9 +215,6 @@ export class ScoreAppService {
     });
   }
 
-  // ===============================
-  // チーム・スナップショット管理
-  // ===============================
   setSelectedTeams(teams: Team[]): void {
     this.selectedTeams.next(teams);
   }

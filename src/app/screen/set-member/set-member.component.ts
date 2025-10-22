@@ -43,8 +43,23 @@ export class SetMemberComponent {
     }
     if (this.currentTeams.length === 0) {
       for (let i = 0; i < this.teamCount; i++) {
+        let teamName: string = "";
+        switch(i) {
+          case 0:
+            teamName = "チームA";
+            break;
+          case 1:
+            teamName = "チームB";
+            break;
+          case 2:
+            teamName = "チームC";
+            break;
+          case 3:
+            teamName = "チームD";
+            break;
+        } 
         const team: Team = {
-          name: `チーム${i + 1}`,
+          name: teamName,
           member: [],
           score: 0,
           totalScore: 0,

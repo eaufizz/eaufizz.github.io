@@ -23,7 +23,7 @@
       (click)="onClickCard('勝利ターン平均')"
       [ngClass]="{'selected': chartFilter.includes('勝利ターン平均')}"
     >
-      <label>勝利ターン<br>平均</label>
+      <label>勝利時平均</label>
       <div class="data">
         <span>{{averageWinningTurns}}</span>
         <span class="unit">
@@ -109,6 +109,10 @@
         </span>
       </div>
     </div>
+    <button
+      class="info"
+      (click)="openInfo()"  
+    >?</button>
   </div>
   @if(filteredChart.length > 0) {
     <div class="chart-container">
@@ -126,7 +130,14 @@
     </div>
   } @else {
     <div class="guide">
-      <span>上の項目を選択してグラフ表示！</span>
+      <span>
+        上の項目を選択すると<br>
+        ここにグラフが表示されます
+      </span>
     </div>
   }
 </div>
+
+@if (showInfo) {
+  <app-data-info (close)="closeInfo()"></app-data-info>
+}

@@ -1,0 +1,76 @@
+@use "../../stylesheets/normal-color.scss" as normal;
+
+.dialog-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .dialog {
+    width: 45vh;
+    height: 58.74vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    border: 0.12vh solid black;
+    border-radius: 1.97vh;
+    padding: 4vh;
+    box-sizing: border-box;
+
+    .header {
+      height: 3vh;
+      width: 100%;
+      display: flex;
+      gap: 4.1vh;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .header-title {
+        font-size: 2.34vh;
+        font-weight: 700;
+      }
+
+      .close-button {
+        position: absolute;
+        width: 3.7vh;
+        height: 3.7vh;
+        right: 0;
+        color: white;
+        background-color: #3B3B3B;
+        border-radius: 50%;
+        font-size: 2.8vh;
+        font-weight: 700;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .dialog-body {
+      height: 45.44vh;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+
+      .row {
+        font-size: 1.8vh;
+        width: 100%;
+
+        .title {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

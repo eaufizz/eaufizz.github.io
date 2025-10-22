@@ -1,0 +1,92 @@
+<div
+  class="dialog-container"
+  (click)="onClickClose()"
+>
+  <div class="dialog">
+    <div class="header">
+      <div class="header-title">各データの説明</div>
+      <button
+        class="close-button"
+        (click)="onClickClose()"
+      >×</button>
+    </div>
+    <div class="dialog-body">
+      <div class="row">
+        <div class="title">
+          ①セット勝率
+        </div>
+        <div class="description">
+          セット当たりの勝率です。<br>
+          計算式：総勝利数/総プレイ数100
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          ②勝利ターン平均
+        </div>
+        <div class="description">
+          勝利時のターン数の平均値です。<br>
+          この値が小さいほど最短で勝利できていることを示します。<br>
+          計算式：勝利時ターン数の総和/総勝利数
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          ③ブレイク平均
+        </div>
+        <div class="description">
+          ブレイクにおける獲得点の平均値です。<br>
+          計算式：ブレイク獲得点の総和/総ブレイク投擲数
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          ④狙い通り率
+        </div>
+        <div class="description">
+          狙い通りに投擲する確率です。<br>
+          狙った通りの正確な投擲ができているかを示します。<br>
+          計算式：総狙い通り数/総投擲数
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          ⑤平均得点
+        </div>
+        <div class="description">
+          一投当たりの獲得の平均値です。<br>
+          戦略的に小さい点数を狙うこともありますが、強いプレイヤーであるほど点数の高いスキットルを最短で倒す結果、平均値が高くなります。<br>
+          計算式：総獲得点/総投擲数
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          ⑥ファウル率
+        </div>
+        <div class="description">
+          点数を獲得できなかった投擲（ファウル）の確率です。<br>
+          計算式：スキットルを倒せなかった回数の総和/総投擲数100
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">
+          ⑦50オーバー
+        </div>
+        <div class="description">
+          セットあたりに50点をオーバーする回数（確率）を示します。チームのオーバーもカウントされます。<br>
+          計算式：50点オーバーした回数の総和/総プレイセット数
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="title">
+          ⑧セット失格率
+        </div>
+        <div class="description">
+          セットあたりに3回連続のファウルにより失格になる確率を示します。チームの失格もカウントされます。<br>
+          計算式：失格した回数の総和/総プレイセット数*100
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
