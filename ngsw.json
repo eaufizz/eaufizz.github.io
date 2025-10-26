@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1761407096274,
+  "timestamp": 1761448920038,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "/index.html",
-        "/main-JBGP2XEP.js",
+        "/main-RMCZGIFY.js",
         "/manifest.webmanifest",
         "/polyfills-B6TNHZQ6.js",
         "/styles-UMWVP4MO.css"
@@ -65,8 +65,8 @@
     "/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/index.html": "498328352a311f8ecd8323b0dd319200f8a60bf5",
-    "/main-JBGP2XEP.js": "2f0a1c11ce22ea524ae5d4c91928657abd7ea07c",
+    "/index.html": "c8f433607078b6733b24e59dfc3d5366e0925a88",
+    "/main-RMCZGIFY.js": "a2a6193b53b7b3ddb65973b07b85078604458759",
     "/manifest.webmanifest": "4713c64739ff581e059201e4ce98e3e23d0cfe54",
     "/media/header_wood-HRV6ZC3X.svg": "583e98cb71611adbf2b4d7f2ee17e2c1a65e1daf",
     "/media/nikumaru-ENWND6RL.otf": "8c64e2d2fffeb794d6154619cc5c27461c5b1a2d",
